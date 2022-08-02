@@ -3,18 +3,22 @@
 ## Sales Pitch
 A tool for doctors and nurses to monitor and update patient conditions, medications, treatments, and other critical details.
 
-## Picture
+## Roles
+Nick - Team Manager
+Pedro - Frontend SME
+Larry - Backend SME
 
 ## General Approach
+Patient data is seeded in the mongoDB server according to the patient model. After that, the data can be manipulated by authenticated users inside the client.
 
 ## Installation Instructions
 You need to install dependencies with `npm install`
 
 ## User Stories
-- As an unauthenticated user, I want to be able to sign up.
-- As an unauthenticated user, I want to be able to log in.
-- As an authenticated user, I want to be able to change my password.
-- As an authenticated user, I want to be able to log out.
+- As an unauthenticated user, I want to be able to sign up. ✓
+- As an unauthenticated user, I want to be able to log in. ✓
+- As an authenticated user, I want to be able to change my password. ✓
+- As an authenticated user, I want to be able to log out. ✓
 - As an authenticated user, I want to be able to see all patients.
 - As an authenticated user, I want to be able to see a single patient.
 - As an authenticated user, I want to be able to create/enter a patient into the system.
@@ -44,11 +48,11 @@ You need to install dependencies with `npm install`
 ## Routes
 ### User Routes
 | Endpoint                 | Component        | Description          | `AuthenticatedRoute?` |
-|--------------------------|------------------|----------------------|----------------------|
-| `/users/sign-in`         | `SignIn`         | User sign-in page    | No                   |
-| `/users/sign-up`         | `SignUp`         | User sign-up page    | No                   |
-| `/users/change-password` | `ChangePassword` | Change password page | Yes                  |
-| `users/sign-out`         | `SignOut`        | Signout confirmation | Yes                  |
+|--------------------------|------------------|----------------------|-----------------------|
+| `/users/sign-in`         | `SignIn`         | User sign-in page    | No                    |
+| `/users/sign-up`         | `SignUp`         | User sign-up page    | No                    |
+| `/users/change-password` | `ChangePassword` | Change password page | Yes                   |
+| `users/sign-out`         | `SignOut`        | Signout confirmation | Yes                   |
 
 ### Patient Routes
 #### React
@@ -78,6 +82,13 @@ You need to install dependencies with `npm install`
 | NEW     | create new medicine   | POST      | `/medicines/`        |
 | UPDATE  | update medicine       | PATCH     | `/medicines/:id`     |
 | DESTROY | remove medicine       | DELETE    | `/medicines/:id`     |
+
+#### React Components
+| Component Name        | Description                                                 |
+|-----------------------|-------------------------------------------------------------|
+| `MedicineDetails`     | Main container for medicine details and UI options          |
+| `CreateMedicineModal` | Modal that appears on ShowPatient page to create a medicine |
+| `EditMedicineModal`   | Modal that appears on ShowPatient page to edit a medicine   |
 
 ## Stretch Goals
 - Alert system
