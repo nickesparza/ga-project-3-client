@@ -1,4 +1,4 @@
-# GA Project 3
+# GA Project 3 - Patient Portal
 
 ## Sales Pitch
 A tool for doctors and nurses to monitor and update patient conditions, medications, treatments, and other critical details.
@@ -40,6 +40,44 @@ You need to install dependencies with `npm install`
 - Medicine (subdoc)
     - Name
     - Dosage
+
+## Routes
+### User Routes
+| Endpoint                 | Component        | Description          | `AuthenticatedRoute?` |
+|--------------------------|------------------|----------------------|----------------------|
+| `/users/sign-in`         | `SignIn`         | User sign-in page    | No                   |
+| `/users/sign-up`         | `SignUp`         | User sign-up page    | No                   |
+| `/users/change-password` | `ChangePassword` | Change password page | Yes                  |
+| `users/sign-out`         | `SignOut`        | Signout confirmation | Yes                  |
+
+### Patient Routes
+#### React
+| Endpoint             | Component       | Description                       | `authenticatedRoute?` |
+|----------------------|-----------------|-----------------------------------|-----------------------|
+| `/patients/`         | `PatientList`   | Display of all patients           | Yes                   |
+| `/patients/:id`      | `ShowPatient`   | Display of one patient            | Yes                   |
+| `/patients/new`      | `NewPatient`    | Container for new patient form    | Yes                   |
+| `/patients/:id/edit` | `EditPatient`   | Container for edit patient form   | Yes                   |
+| `/patients/delete`   | `DeletePatient` | Confirmation for deleting patient | Yes                   |
+
+#### Express
+| REST    | Description           | HTTP Verb | Express Route        |
+|---------|-----------------------|-----------|----------------------|
+| INDEX   | patient index         | GET       | `/patients`          |
+| SHOW    | patient show page     | GET       | `/patients/:id`      |
+| NEW     | new patient form      | POST      | `/patients/new`      |
+| CREATE  | create new patient    | POST      | `/patients`          |
+| EDIT    | edit existing patient | GET       | `/patients/:id/edit` |
+| UPDATE  | update patient        | PATCH     | `/patients/:id`      |
+| DESTROY | remove patient        | DELETE    | `/patients/:id`      |
+
+### Medicine Routes
+#### Express
+| REST    | Description           | HTTP Verb | Express Route        |
+|---------|-----------------------|-----------|----------------------|
+| NEW     | create new medicine   | POST      | `/medicines/`        |
+| UPDATE  | update medicine       | PATCH     | `/medicines/:id`     |
+| DESTROY | remove medicine       | DELETE    | `/medicines/:id`     |
 
 ## Stretch Goals
 - Alert system
