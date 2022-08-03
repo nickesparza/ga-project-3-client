@@ -11,6 +11,11 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 ## Pictures
 ![](src/wireFrames/homePage.jpeg)
 ![](src/wireFrames/patientcard.jpeg)
+![](src/wireFrames/loginpage.jpeg)
+![](src/wireFrames/newpatient.jpeg)
+![](src/wireFrames/beforelogin.jpeg)
+![](src/wireFrames/signup.jpeg)
+
 
 ## General Approach
 Patient data is seeded in the mongoDB server according to the patient model. After that, the data can be manipulated by authenticated users inside the client.
@@ -22,7 +27,7 @@ You need to install dependencies with `npm install`.
 After that, `npm start` will launch both the mongoDB server and the react client.
 
 ## User Stories
-- As an unauthenticated user, I want to be able to sign up.
+- As an unauthenticated user, I want to be able to sign up..
 - As an unauthenticated user, I want to be able to log in.
 - As an authenticated user, I want to be able to change my password.
 - As an authenticated user, I want to be able to log out.
