@@ -15,8 +15,11 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 ## General Approach
 Patient data is seeded in the mongoDB server according to the patient model. After that, the data can be manipulated by authenticated users inside the client.
 
+We are using React with functional components for the frontend client application, and Express with Mongoose to connect to the MongoDB server on the backend.
+
 ## Installation Instructions
-You need to install dependencies with `npm install`
+You need to install dependencies with `npm install`.
+After that, `npm start` will launch both the mongoDB server and the react client.
 
 ## User Stories
 - As an unauthenticated user, I want to be able to sign up.
@@ -35,6 +38,12 @@ You need to install dependencies with `npm install`
 - As an authenticated user, I want to be able to delete a medication off a patient's chart.
 
 ## Models
+- User
+    - Username
+    - Password
+    - Token
+    - Patients
+
 - Patient
     - Name
     - Age/DOB
@@ -43,12 +52,14 @@ You need to install dependencies with `npm install`
     - Preexisting Conditions
     - Current Condition
     - Treatment Plan/Duration
+    - Doctors
     - Medicines
     - Comments
 
 - Medicine (subdoc)
     - Name
     - Dosage
+    - Duration
 
 ## Routes
 ### User Routes
@@ -123,6 +134,7 @@ You need to install dependencies with `npm install`
             - DeletePatientModal
         - NewPatient
 
-## Entity Relationship Diagrams
+## Entity Relationship Diagram
+![](/src/wireFrames/ERD.jpg)
 
 ## Major Hurdles/Unsolved Problems
