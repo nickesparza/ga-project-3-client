@@ -9,12 +9,12 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 - Larry - Backend SME
 
 ## Pictures
-![](src/wireFrames/homePage.jpeg)
-![](src/wireFrames/patientcard.jpeg)
-![](src/wireFrames/loginpage.jpeg)
-![](src/wireFrames/newpatient.jpeg)
-![](src/wireFrames/beforelogin.jpeg)
-![](src/wireFrames/signup.jpeg)
+![](wireFrames/homePage.jpeg)
+![](wireFrames/patientcard.jpeg)
+![](wireFrames/loginpage.jpeg)
+![](wireFrames/newpatient.jpeg)
+![](wireFrames/beforelogin.jpeg)
+![](wireFrames/signup.jpeg)
 
 
 ## General Approach
