@@ -22,7 +22,8 @@ You need to install dependencies with `npm install`
 - As an authenticated user, I want to be able to see all patients.
 - As an authenticated user, I want to be able to see a single patient.
 - As an authenticated user, I want to be able to create/enter a patient into the system.
-- As an authenticated user, I want to be able to edit/update a patient's details and treatment plan.
+- As an authenticated user, I want to be able to edit/update a patient's details.
+- As an authenticated user, I want to be able to add a treatment plan to a patient.
 - As an authenticated user, I want to be able to delete/discharge a patient.
 - As an authenticated user, I want to be able to see all medications associated with a patient.
 - As an authenticated user, I want to be able to add a medication to a patient.
@@ -32,7 +33,7 @@ You need to install dependencies with `npm install`
 ## Models
 - Patient
     - Name
-    - Age
+    - Age/DOB
     - Blood Type
     - Emergency Contact Telephone #
     - Preexisting Conditions
