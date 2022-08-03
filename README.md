@@ -5,6 +5,9 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 
 ## Picture
 
+![](src/wireFrames/homePage.jpeg)
+![](src/wireFrames/patientcard.jpeg)
+
 ## General Approach
 
 ## Installation Instructions
