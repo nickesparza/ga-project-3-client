@@ -19,7 +19,7 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 You need to install dependencies with `npm install`
 
 ## User Stories
-- As an unauthenticated user, I want to be able to sign up.
+- As an unauthenticated user, I want to be able to sign up..
 - As an unauthenticated user, I want to be able to log in.
 - As an authenticated user, I want to be able to change my password.
 - As an authenticated user, I want to be able to log out.
