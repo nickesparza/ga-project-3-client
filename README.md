@@ -47,6 +47,7 @@ You need to install dependencies with `npm install`
 
 ## Routes
 ### User Routes
+#### React
 | Endpoint                 | Component        | Description          | `AuthenticatedRoute?` |
 |--------------------------|------------------|----------------------|-----------------------|
 | `/users/sign-in`         | `SignIn`         | User sign-in page    | No                    |
@@ -86,7 +87,7 @@ You need to install dependencies with `npm install`
 #### React Components
 | Component Name        | Description                                                 |
 |-----------------------|-------------------------------------------------------------|
-| `MedicineDetails`     | Main container for medicine details and UI options          |
+| `ShowMedicine`        | Main container for medicine details and UI options          |
 | `CreateMedicineModal` | Modal that appears on ShowPatient page to create a medicine |
 | `EditMedicineModal`   | Modal that appears on ShowPatient page to edit a medicine   |
 
@@ -95,6 +96,27 @@ You need to install dependencies with `npm install`
 - Discharged patients go into an archive with a cause
 
 ## Wireframes
+
+### Component Hierarchy
+- App
+    - Header
+    - Home
+        - HomePage
+        - Auth
+            - SignIn
+            - SignOut
+            - SignUp
+            - ChangePassword
+        - PatientList
+        - ShowPatient
+            - PatientDetails
+            - TreatmentPlan
+                - ShowMedicine
+                - CreateMedicineModal
+                - EditMedicineModal
+            - EditPatientModal
+            - DeletePatientModal
+        - NewPatient
 
 ## Entity Relationship Diagrams
 
