@@ -4,9 +4,9 @@
 A tool for doctors and nurses to monitor and update patient conditions, medications, treatments, and other critical details.
 
 ## Roles
-Nick - Team Manager
-Pedro - Frontend SME
-Larry - Backend SME
+- Nick - Team Manager
+- Pedro - Frontend SME
+- Larry - Backend SME
 
 ## General Approach
 Patient data is seeded in the mongoDB server according to the patient model. After that, the data can be manipulated by authenticated users inside the client.
@@ -15,14 +15,14 @@ Patient data is seeded in the mongoDB server according to the patient model. Aft
 You need to install dependencies with `npm install`
 
 ## User Stories
-- As an unauthenticated user, I want to be able to sign up. ✓
-- As an unauthenticated user, I want to be able to log in. ✓
-- As an authenticated user, I want to be able to change my password. ✓
-- As an authenticated user, I want to be able to log out. ✓
+- As an unauthenticated user, I want to be able to sign up.
+- As an unauthenticated user, I want to be able to log in.
+- As an authenticated user, I want to be able to change my password.
+- As an authenticated user, I want to be able to log out.
 - As an authenticated user, I want to be able to see all patients.
 - As an authenticated user, I want to be able to see a single patient.
 - As an authenticated user, I want to be able to create/enter a patient into the system.
-- As an authenticated user, I want to be able to edit/update a patient's details.
+- As an authenticated user, I want to be able to edit/update a patient's details and treatment plan.
 - As an authenticated user, I want to be able to delete/discharge a patient.
 - As an authenticated user, I want to be able to see all medications associated with a patient.
 - As an authenticated user, I want to be able to add a medication to a patient.
