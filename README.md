@@ -9,7 +9,7 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 ![](src/wireFrames/patientcard.jpeg)
 ![](src/wireFrames/loginpage.jpeg)
 ![](src/wireFrames/newpatient.jpeg)
-![](src/wireFrames/patientcard.jpeg)
+![](src/wireFrames/beforelogin.jpeg)
 ![](src/wireFrames/signup.jpeg)
 
 
