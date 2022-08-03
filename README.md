@@ -8,6 +8,7 @@ A tool for doctors and nurses to monitor and update patient conditions, medicati
 - Pedro - Frontend SME
 - Larry - Backend SME
 
+## Pictures
 ![](src/wireFrames/homePage.jpeg)
 ![](src/wireFrames/patientcard.jpeg)
 
