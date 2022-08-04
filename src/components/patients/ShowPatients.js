@@ -38,15 +38,18 @@ const ShowPatient = (props) => {
 
    // console.log('params in show Patient', params)
     return (
-        <div style={{display: 'flex'}}>
-        
+        <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
 
         <Card style={{width: '30%',  margin: 5}}>
-            <Card.Header>{ patient.name }</Card.Header>
+            <Card.Header><h2>{ patient.name }</h2></Card.Header>
             <Card.Body>
-             <p>this is show patient {patient.name }</p>
-                
-               
+                <p>Age: {patient.age}</p>
+                <p>Blood Type: {patient.bloodType}</p>
+                <p>Urgent Contact: {patient.emergencyContact}</p>
+                <p>preCon: {patient.preCon}</p>
+                <p>currCon: {patient.currCon}</p>
+                <p>treatment: {patient.treatment}</p>
+                <p>comments: {patient.comments}</p>
             </Card.Body>
         </Card>
         <Card style={{width: '30%',  margin: 5}}>
