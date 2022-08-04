@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.homeContainerMiddleBody{
+
+  text-align: center;
+  position: relative;
+}
+.h2themedics{
+  font-size: 65px;
+}
+.footerHomeBody{
+  margin-bottom: 1px;
+  background-color: aquamarine;
+  justify-content: flex-end;
+}
