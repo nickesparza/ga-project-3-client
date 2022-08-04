@@ -3,6 +3,7 @@ import PatientIndex from "./patients/PatientIndex"
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
+	const { msgAlert} = props
     const { user } = props
 
 	return (
@@ -12,6 +13,7 @@ const Home = (props) => {
 
 			<h3>See the Patients</h3>
 			<PatientIndex 
+			msgAlert= { msgAlert }
                 user={user}
             />
 

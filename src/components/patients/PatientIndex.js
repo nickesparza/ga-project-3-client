@@ -9,10 +9,25 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPatients } from '../../api/patients'
 
-// import messages from '../shared/AutoDismissAlert/messages'
+import messages from '../shared/AutoDismissAlert/messages'
 
+
+// STYLE FOR CARDs
+const cardContainerStyle = {
+    display: 'flex',
+    flexFlow: 'row wrap',
+   
+    
+}
+
+
+
+
+
+/// PATIENTS LIST 
 const PatientIndex = (props) => {
     const [patients, setPatients] = useState(null)
+    const { msgAlert } = props
     const { user } = props
     console.log('user in PatientIndex', user)
     useEffect(() => {
@@ -22,8 +37,13 @@ const PatientIndex = (props) => {
             // .then(res => console.log(res))
             .then(res => setPatients(res.data.patients))
             //console.log('use effects work')
-            .catch(err => console.log(err))
-        // if there is no user, console log this message
+            .catch(err => {
+                msgAlert ({
+                heading: 'Error Getting Patients',
+                message: messages.getPatientsFailure,
+                variant: 'danger',
+            })})
+        // if there is no user, console log this message.. no showing the patients....
         } else {
             setPatients([])
             console.log('not logged in', patients)
@@ -47,20 +67,23 @@ const PatientIndex = (props) => {
     }
 
     const patientCards = patients.map(patient => (
-        <Card key={patient._id}>
+        <Card style={{width: '30%',  margin: 5}} key={patient._id}>
             <Card.Header>{ patient.name }</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/patients/${patient.id}`}>View { patient.name}</Link> 
+                    <Link to={`/patients/${patient._id}`}>View {patient.name}</Link> 
                 </Card.Text>
+               
             </Card.Body>
         </Card>
         ))
 
+
+        //SHOWING PATIENT CARDS ON BODY
         return(
-            <>
+            <div style={cardContainerStyle}>
             { patientCards }
-            </>
+            </div>
         )
 
 
@@ -69,5 +92,9 @@ const PatientIndex = (props) => {
 
     // return <h1>This is Patients Index</h1>
 }
+
+
+
+
 
 export default PatientIndex

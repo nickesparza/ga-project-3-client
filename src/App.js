@@ -12,6 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import ShowPatient from './components/patients/ShowPatients'
 
 const App = () => {
 
@@ -68,6 +69,12 @@ const App = () => {
                             <ChangePassword msgAlert={msgAlert} user={user} />
                         </RequireAuth>}
                     />
+                    <Route
+                        path="/patients/:id"
+                        element={ <ShowPatient  user={user}/>}
+                    />
+
+
                     </Routes>
                     {msgAlerts.map((msgAlert) => (
                         <AutoDismissAlert
