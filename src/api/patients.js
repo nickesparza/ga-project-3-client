@@ -11,16 +11,17 @@ export const getAllPatients = (user) => {
 		}
 	})
 }
-
+// create patient
 export const createPatient = (user, newPatient) => {
+    console.log('this is the data being sent in the axios post request', newPatient)
     return axios({
         url: apiUrl + '/patients',
         method: 'POST',
         headers: {
-            Authorization: `Token token =${user.token}`
+            Authorization: `Token token=${user.token}`
         },
         data: {
-            newPatient
-        }
+            patient: newPatient
+        },
     })
 }

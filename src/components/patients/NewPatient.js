@@ -19,35 +19,44 @@ const NewPatient = (props) => {
         comments: ''
     })
 
-        const handleChange = (e) => {
-            setPatient(prevPatient => {
-                let value = e.target.value
-                const name = e.target.name
+    console.log('this is patient in CreatePatient', patient)
 
-                const updatedPatient = {
-                    [name]: value
-                }
-    
-                return {
-                    ...prevPatient,
-                    ...updatedPatient
-                }
-            })
-        }
+    const handleChange = (e) => {
+        setPatient(prevPatient => {
+            let value = e.target.value
+            const name = e.target.name
 
-        const handleSubmit = (e) => {
-            e.preventDefault()
-            createPatient(user, patient)
-                // send a success message
-                // navigate to newly created patient
-                .then(res => navigate(`/patients/${res.data.patient.id}`))
-                .then(() => {
-                    msgAlert({
-                        heading: 'Success',
-                        message: 'Patient Created',
-                        variant: 'success'
-                    })
+            const updatedPatient = {
+                [name]: value
+            }
+
+            return {
+                ...prevPatient,
+                ...updatedPatient
+            }
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('info was submitted', patient)
+        createPatient(user, patient)
+            .then(res => navigate(`/`))
+            .then(() => {
+                msgAlert({
+                    heading: 'Success',
+                    message: 'Patient Created',
+                    variant: 'success'
                 })
+            })
+            .catch((err) => {
+                console.log(err)
+                msgAlert({
+                    heading: 'Oh no!',
+                    message: 'failed to create patient',
+                    variant: 'danger'
+                })
+            })
         }
 
         return (

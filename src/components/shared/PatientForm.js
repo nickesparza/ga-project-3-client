@@ -33,7 +33,6 @@ const PatientForm = (props) => {
                         required
                         name='bloodType'
                         value={patient.bloodType}
-                        defaultValue={patient.bloodType}
                         onChange={handleChange}
                     >
                         <option value="A+">A+</option>
@@ -66,7 +65,6 @@ const PatientForm = (props) => {
                         required
                         name='currCon'
                         value={patient.currCon}
-                        defaultValue={patient.currCon}
                         onChange={handleChange}
                     >
                         <option value="stable">stable</option>
