@@ -32,9 +32,10 @@ const PatientForm = (props) => {
                     <Form.Select
                         required
                         name='bloodType'
-                        value={patient.bloodType}
+                        defaultValue={patient.bloodType}
                         onChange={handleChange}
                     >
+                        <option>Choose Blood Type</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -67,6 +68,7 @@ const PatientForm = (props) => {
                         value={patient.currCon}
                         onChange={handleChange}
                     >
+                        <option>Choose condition</option>
                         <option value="stable">stable</option>
                         <option value="serious">serious</option>
                         <option value="critical">critical</option>

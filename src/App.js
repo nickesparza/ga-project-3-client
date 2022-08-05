@@ -12,11 +12,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-<<<<<<< HEAD
 import NewPatient from './components/patients/NewPatient'
-=======
 import ShowPatient from './components/patients/ShowPatients'
->>>>>>> 2newLayout
 
 const App = () => {
 
