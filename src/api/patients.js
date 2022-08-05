@@ -53,5 +53,14 @@ export const createPatient = (user, newPatient) => {
 }
 
 export const updatePatient = (user, updatedPatient) => {
-    console.log('update route was hit')
+    return axios({
+        url: `${apiUrl}/patients/${updatedPatient._id}`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: {
+            patient: updatedPatient
+        },
+    })
 }

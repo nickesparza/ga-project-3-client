@@ -1,18 +1,47 @@
 import React, {useState} from 'react'
 import { Modal } from "react-bootstrap"
+import messages from '../shared/AutoDismissAlert/messages'
 import PatientForm from "../shared/PatientForm"
 
 const EditPatientModal = (props) => {
-    const {msgAlert, user, show, handleClose, updatePet, triggerRefresh} = props
+    const {msgAlert, user, show, handleClose, updatePatient, triggerRefresh} = props
 
     const [patient, setPatient] = useState(props.patient)
     const handleChange = (e) => {
-        console.log(`a change was made`)
+        setPatient(prevPatient => {
+            let value = e.target.value
+            const name = e.target.name
+
+            const updatedPatient = {
+                [name]: value
+            }
+
+            return {
+                ...prevPatient,
+                ...updatedPatient
+            }
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('submit was pressed')
+        updatePatient(user, patient)
+            .then(() => handleClose())
+            .then(() => {
+                msgAlert({
+                    heading: 'Success',
+                    message: 'Patient has been edited.',
+                    variant: 'success'
+                })
+            })
+            .then(() => triggerRefresh())
+            .catch(() => {
+                msgAlert({
+                    heading: 'Error',
+                    message: 'Patient was not edited.',
+                    variant: 'danger'
+                })
+            })
     }
 
     return(

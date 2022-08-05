@@ -37,9 +37,7 @@ const ShowPatient = (props) => {
         } else {
             navigate('/sign-in')
         }
-    }, [])
-
-    console.log(patient)
+    }, [updated])
 
     if(!patient) {
         return <LoadingScreen  />
