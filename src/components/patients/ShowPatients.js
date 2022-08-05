@@ -8,6 +8,7 @@ import { Container, Card, Button } from 'react-bootstrap'
 
 import LoadingScreen from '../shared/LoadingScreen'
 import EditPatientModal from './EditPatientModal'
+import DeletePatientModal from './DeletePatientModal'
 import { getOnePatient } from '../../api/patients'
 import { updatePatient } from '../../api/patients'
 
@@ -43,7 +44,7 @@ const ShowPatient = (props) => {
         return <LoadingScreen  />
     }
 
-   // console.log('params in show Patient', params)
+    // console.log('params in show Patient', params)
     return (
         <>
             <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
@@ -65,7 +66,7 @@ const ShowPatient = (props) => {
                             </Button>
                         }
                         {
-                            <Button size='sm' className='mx-2' variant='outline-danger'>
+                            <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
                                 Discharge Patient
                             </Button>
                         }
@@ -96,6 +97,13 @@ const ShowPatient = (props) => {
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 // this closes the modal when the submit button is pressed
                 handleClose={() => setEditModalShow(false)} 
+            />
+            <DeletePatientModal
+                patient={patient}
+                user={user}
+                msgAlert={msgAlert}
+                show={deleteModalShow}
+                handleClose={() => setDeleteModalShow(false)}
             />
         </>
     )

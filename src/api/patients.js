@@ -37,7 +37,7 @@ export const getOnePatient = (user, id) => {
 //     // })
 // }
 
-// create patient
+// CREATE patient
 export const createPatient = (user, newPatient) => {
     // console.log('this is the data being sent in the axios post request', newPatient)
     return axios({
@@ -52,6 +52,7 @@ export const createPatient = (user, newPatient) => {
     })
 }
 
+// PATCH patient
 export const updatePatient = (user, updatedPatient) => {
     return axios({
         url: `${apiUrl}/patients/${updatedPatient._id}`,
@@ -61,6 +62,17 @@ export const updatePatient = (user, updatedPatient) => {
         },
         data: {
             patient: updatedPatient
+        },
+    })
+}
+
+// DELETE patient
+export const deletePatient = (user, patientId) => {
+    return axios({
+        url: `${apiUrl}/patients/${patientId}`,
+        method: 'DELETE',
+        headers: {
+            Authorization: `Token token=${user.token}`
         },
     })
 }
