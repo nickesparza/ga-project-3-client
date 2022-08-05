@@ -9,7 +9,7 @@ import { Container, Card, Button } from 'react-bootstrap'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditPatientModal from './EditPatientModal'
 import DeletePatientModal from './DeletePatientModal'
-import { getOnePatient } from '../../api/patients'
+import { getOnePatient, attendPatient } from '../../api/patients'
 import { updatePatient } from '../../api/patients'
 
 // import messages from '../shared/AutoDismissAlert/messages'
@@ -45,6 +45,21 @@ const ShowPatient = (props) => {
         return <LoadingScreen  />
     }
 
+    const doctorList = patient.doctors.map(doctor => {
+        return doctor.email
+    })
+
+    const toggleDoctor = () => {
+        attendPatient(user, patient)
+            .then(setUpdated(prev => !prev))
+            .catch(() => {
+                msgAlert({
+                    heading: 'Error',
+                    message: 'Patient was not edited.',
+                    variant: 'danger'
+                })
+            })
+    }
     // console.log('params in show Patient', params)
     return (
         <>
@@ -57,6 +72,7 @@ const ShowPatient = (props) => {
                         <p>Urgent Contact: {patient.emergencyContact}</p>
                         <p>preCon: {patient.preCon}</p>
                         <p>currCon: {patient.currCon}</p>
+                        <p>doctors: {doctorList}</p>
                         <p>treatment: {patient.treatment}</p>
                         <p>comments: {patient.comments}</p>
                     </Card.Body>
@@ -84,6 +100,9 @@ const ShowPatient = (props) => {
                             setTreatmentModalShow(true)
                             }}>
                             Set Treatment
+                        </Button>
+                        <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
+                            Attend patient
                         </Button>
                     </Card.Footer>
                 </Card>

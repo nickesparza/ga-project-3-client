@@ -41,7 +41,7 @@ const NewPatient = (props) => {
         e.preventDefault()
         console.log('info was submitted', patient)
         createPatient(user, patient)
-            .then(res => navigate(`/`))
+            .then(res => navigate(`/patients/${res.data.patient._id}`))
             .then(() => {
                 msgAlert({
                     heading: 'Success',
