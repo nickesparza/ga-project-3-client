@@ -35,10 +35,10 @@ const EditPatientModal = (props) => {
                 <Modal.Header closeButton />
                 <Modal.Body>
                     Are you sure you wish to discharge this patient?
-                    <Button onClick={() => {
+                    <Button variant='primary' className='mx-2' onClick={() => {
                         dischargePatient()
                     }}>Yes</Button>
-                    <Button onClick={handleClose}>No</Button>
+                    <Button variant='danger' className='mx-2' onClick={handleClose}>No</Button>
                 </Modal.Body>
             </Modal>
         </>

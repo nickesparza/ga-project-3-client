@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import { Modal } from "react-bootstrap"
 import messages from '../shared/AutoDismissAlert/messages'
 import PatientForm from "../shared/PatientForm"
+import TreatmentForm from "./TreatmentForm"
 
 const EditPatientModal = (props) => {
-    const {msgAlert, user, show, handleClose, updatePatient, triggerRefresh} = props
+    const {treatmentModalShow, msgAlert, user, show, handleClose, updatePatient, triggerRefresh} = props
 
     const [patient, setPatient] = useState(props.patient)
+
     const handleChange = (e) => {
         setPatient(prevPatient => {
             let value = e.target.value
@@ -49,7 +51,13 @@ const EditPatientModal = (props) => {
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton />
                 <Modal.Body>
-                    <PatientForm patient={patient} heading="Update Patient" handleChange={handleChange} handleSubmit={handleSubmit}/>
+                    {
+                        treatmentModalShow
+                        ?
+                        <TreatmentForm patient={patient} heading="Set Treatment Plan" handleChange={handleChange} handleSubmit={handleSubmit}/>
+                        :
+                        <PatientForm patient={patient} heading="Update Patient" handleChange={handleChange} handleSubmit={handleSubmit}/>
+                    }
                 </Modal.Body>
             </Modal>
         </>

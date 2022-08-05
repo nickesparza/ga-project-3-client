@@ -43,7 +43,7 @@ const PatientIndex = (props) => {
         } else {
             setPatients([])
         }
-    }, [])
+    }, [user])
 
     // if (error) {
     //     return <p>Error!</p>
@@ -56,10 +56,8 @@ const PatientIndex = (props) => {
     // if the patient list is 0, but a user exists, show them that they have the ability to add patients
     } else if (patients.length === 0 && user ) {
         return <p>No patients yet...Lets Add some.</p>
-    // if there is no user, tell them to log in
-    } else if (!user) {
-        return <p>please log in to see patients.</p>
     }
+    // if there is no user, tell them to log in
 
     const patientCards = patients.map(patient => (
         <Card style={{width: '30%',  margin: 5}} key={patient._id}>

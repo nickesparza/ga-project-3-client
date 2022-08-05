@@ -22,6 +22,7 @@ const ShowPatient = (props) => {
     const[patient, setPatient] = useState(null) //null because dont wanna show nothing now
     const [editModalShow, setEditModalShow] = useState(false)
     const [deleteModalShow, setDeleteModalShow] = useState(false)
+    const [treatmentModalShow, setTreatmentModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
     const {user, msgAlert} = props
@@ -78,13 +79,19 @@ const ShowPatient = (props) => {
                         <p>this is The treatment for {patient.name }</p>
                     </Card.Body>
                     <Card.Footer>
-                        This is where the add treatment button will go
+                        <Button size='sm' className='mx-2' variant='info' onClick={() => {
+                            setEditModalShow(true)
+                            setTreatmentModalShow(true)
+                            }}>
+                            Set Treatment
+                        </Button>
                     </Card.Footer>
                 </Card>
             </div>
             <EditPatientModal
                 // modal needs patient info to populate fields
                 patient={patient}
+                treatmentModalShow={treatmentModalShow}
                 // needs user in order to validate in the backend update function
                 user={user}
                 // msgAlert shows the success/fail messages
@@ -96,7 +103,10 @@ const ShowPatient = (props) => {
                 // this updates the state to trigger another useEvent pull of data
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 // this closes the modal when the submit button is pressed
-                handleClose={() => setEditModalShow(false)} 
+                handleClose={() => {
+                    setEditModalShow(false)
+                    setTreatmentModalShow(false)
+                }} 
             />
             <DeletePatientModal
                 patient={patient}
