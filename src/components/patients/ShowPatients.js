@@ -77,16 +77,12 @@ const ShowPatient = (props) => {
                         <p>comments: {patient.comments}</p>
                     </Card.Body>
                     <Card.Footer>
-                        {
                             <Button size='sm' className='mx-2' variant='info' onClick={() => setEditModalShow(true)}>
                                 Edit Patient
                             </Button>
-                        }
-                        {
                             <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
                                 Discharge Patient
                             </Button>
-                        }
                     </Card.Footer>
                 </Card>
                 <Card style={{width: '30%',  margin: 5}}>
@@ -110,6 +106,7 @@ const ShowPatient = (props) => {
             <EditPatientModal
                 // modal needs patient info to populate fields
                 patient={patient}
+                // send state of treatmentModalShow so the modal knows which form to render
                 treatmentModalShow={treatmentModalShow}
                 // needs user in order to validate in the backend update function
                 user={user}
@@ -127,11 +124,16 @@ const ShowPatient = (props) => {
                     setTreatmentModalShow(false)
                 }} 
             />
+            {/* Modal that appears to confirm deletion of a patient */}
             <DeletePatientModal
+                // pass patient to delete modal to run the route
                 patient={patient}
+                // pass user for the same reason since deletePatient requires both
                 user={user}
                 msgAlert={msgAlert}
+                // send state for visibility
                 show={deleteModalShow}
+                // send function to close manually
                 handleClose={() => setDeleteModalShow(false)}
             />
         </>
