@@ -73,7 +73,7 @@ const PatientForm = (props) => {
                         <option value="serious">serious</option>
                         <option value="critical">critical</option>
                     </Form.Select>
-                    <Form.Label htmlFor='treatment'>Treatment</Form.Label>
+                    {/* <Form.Label htmlFor='treatment'>Treatment</Form.Label>
                     <Form.Control
                         name='treatment'
                         value={patient.treatment}
@@ -88,10 +88,10 @@ const PatientForm = (props) => {
                         type='text'
                         placeholder='Describe comments'
                         onChange={handleChange}
-                    />
+                    /> */}
                 </Form.Group>
-                <Button variant='primary' type='submit'>
-                    Create
+                <Button className='my-3' variant='primary' type='submit'>
+                    Submit
                 </Button>
             </Form>
         </Container>

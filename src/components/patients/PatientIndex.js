@@ -4,8 +4,7 @@ import {
 } from 'react'
 // import { propTypes } from 'react-bootstrap/esm/Image'
 import Card from 'react-bootstrap/Card'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPatients } from '../../api/patients'
 
@@ -20,15 +19,12 @@ const cardContainerStyle = {
     
 }
 
-
-
-
-
 /// PATIENTS LIST 
 const PatientIndex = (props) => {
     const [patients, setPatients] = useState(null)
     const { msgAlert } = props
     const { user } = props
+    const navigate = useNavigate()
     console.log('user in PatientIndex', user)
     useEffect(() => {
         console.log('useEffect has run')
@@ -46,7 +42,6 @@ const PatientIndex = (props) => {
         // if there is no user, console log this message.. no showing the patients....
         } else {
             setPatients([])
-            console.log('not logged in', patients)
         }
     }, [])
 

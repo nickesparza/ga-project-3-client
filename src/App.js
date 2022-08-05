@@ -46,7 +46,9 @@ const App = () => {
 			<Fragment>
 				<Header user={user} />
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route path='/' element={
+                        <Home msgAlert={msgAlert} user={user} />}
+                    />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -79,7 +81,7 @@ const App = () => {
                     />
                     <Route
                         path="/patients/:id"
-                        element={ <ShowPatient  user={user}/>}
+                        element={ <ShowPatient msgAlert={msgAlert} user={user}/>}
                     />
                     </Routes>
                     {msgAlerts.map((msgAlert) => (

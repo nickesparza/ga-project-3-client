@@ -16,12 +16,11 @@ export const getAllPatients = (user) => {
 export const getOnePatient = (user, id) => {
     // return axios(`${apiUrl}/patients/${id}`)
     return axios({
-        url: apiUrl + `/patients/${id}`,
+        url: `${apiUrl}/patients/${id}`,
         method: 'GET',
         headers: {
             Authorization: `Token token=${user.token}`
         }
-    
     })
 }
 
@@ -40,7 +39,7 @@ export const getOnePatient = (user, id) => {
 
 // create patient
 export const createPatient = (user, newPatient) => {
-    console.log('this is the data being sent in the axios post request', newPatient)
+    // console.log('this is the data being sent in the axios post request', newPatient)
     return axios({
         url: apiUrl + '/patients',
         method: 'POST',
@@ -51,4 +50,8 @@ export const createPatient = (user, newPatient) => {
             patient: newPatient
         },
     })
+}
+
+export const updatePatient = (user, updatedPatient) => {
+    console.log('update route was hit')
 }

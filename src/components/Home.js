@@ -12,10 +12,16 @@ const Home = (props) => {
 			<h2 className="h2themedics">The Medics</h2>
 
 			<h3>See the Patients</h3>
-			<PatientIndex 
-			msgAlert= { msgAlert }
-                user={user}
-            />
+			{
+                user
+                ?
+                <PatientIndex 
+                    msgAlert= { msgAlert }
+                    user={user}
+                />
+                :
+                <p>log in to see patients.</p>
+            }
 
 			<footer className="footerHomeBody">
 					<h3>
