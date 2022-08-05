@@ -19,7 +19,7 @@ const Home = (props) => {
 
 			<footer className="footerHomeBody">
 					<h3>
-						ola.
+						ola
 					</h3>
 			</footer>
 			
