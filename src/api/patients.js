@@ -11,6 +11,33 @@ export const getAllPatients = (user) => {
 		}
 	})
 }
+
+// READ => SHOW
+export const getOnePatient = (user, id) => {
+    // return axios(`${apiUrl}/patients/${id}`)
+    return axios({
+        url: apiUrl + `/patients/${id}`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    
+    })
+}
+
+// // READ => SHOW
+// export const getOnePatient = (id) => {
+//     return axios(`${apiUrl}/patients/${id}`)
+//     // return axios({
+//     //     url: apiUrl + `/patients/${id}`,
+//     //     method: 'GET',
+//     //     headers: {
+//     //         Authorization: `Token token=${user.token}`
+//     //     }
+    
+//     // })
+// }
+
 // create patient
 export const createPatient = (user, newPatient) => {
     console.log('this is the data being sent in the axios post request', newPatient)
