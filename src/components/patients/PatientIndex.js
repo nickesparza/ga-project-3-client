@@ -12,6 +12,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 //IMPORTING STYLES 
 import imgProfile from '../../imgs/profile.jpeg'
+import { CardGroup } from 'react-bootstrap'
 
 
 // STYLE FOR CARDs
@@ -65,26 +66,34 @@ const PatientIndex = (props) => {
     const patientCards = patients.map(patient => (
        
 
+        // <div className='patients-adjusting-cards'>
+
+        
+
         
             <Card style={{width: '30%',  margin: 5}} key={patient._id}>
                 <div className='div-profile-IMG'>
-                            <img className='image' style={{width: '45%',margin: 5}} src={imgProfile} ></img>
+                        <img className='image' style={{width: '45%',margin: 5}} src={imgProfile} ></img>
                 </div>
                 <Card.Header>{ patient.name }</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to={`/patients/${patient._id}`}><p className='p-info'  >View:</p>  {patient.name}</Link> 
+                        <Link to={`/patients/${patient._id}`}><p className='p-info'>View:</p> {patient.name}</Link> 
                     </Card.Text>
                 
                 </Card.Body>
             </Card>
+
+            
+
+            
        
         ))
 
 
         //SHOWING PATIENT CARDS ON BODY
         return(
-            <div style={cardContainerStyle}>
+            <div className="testurgent-cards" style={cardContainerStyle}>
             { patientCards }
             </div>
         )

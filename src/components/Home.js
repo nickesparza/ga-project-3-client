@@ -15,29 +15,36 @@ const Home = (props) => {
 					<Container >
 						<figure className="position-relative" >
 							<div className="img-dr-control">
-								<img className="img-smile-doctor img-fluid position-relative" src={doctorPicture} />
+								<img className="img-smile-doctor img-fluid position-relative position-fixed" src={doctorPicture} />
 							</div>
 								
 							<figcaption >
 								<div >
-									<h2 className="h2themedics">The Medics</h2>
+									<h2 className="h2themedics ">The Medics</h2>
 								</div>
 
 								
-								<h3>See the Patients</h3>
+								<h3 >See the Patients</h3>
+								<div className="controlOnlyCards">
 								{
 									user
 									?
+									
 									<PatientIndex 
+										
 										msgAlert= { msgAlert }
 										user={user}
 									/>
+									
+									
 									:
 									
-									<p>log in to see patients.</p>
+									<p className="styling-Texts ">Log in to see patients...</p>
 									
 									
 								}
+								</div>
+								
 
 							</figcaption>
 

@@ -33,16 +33,54 @@ figure{
 width: 1300px;
 }
 
-figcaption{
-  
+
+
+
+
+figcaption {
+  width: 900px;
   position: absolute;
   bottom: 45%;
-  margin: 0 30%;
+  /* margin: 0 30%; */
+  margin-left: 4%;
+  margin-top: -20%;
+}
+figcaption .controlOnlyCards{
+  width: 900px;
+ 
+  bottom: 45%;
+  /* margin: 0 30%; */
+  margin-top: 100%;
+  /* margin-top: -20%; */
+
 }
 
 
 
 
+
+
+
+
+/* STYLING TEXTS HOME PAGE */
+.styling-Texts{
+  /* color: #b12a2a; */
+  /* background-color: rgba(58, 95, 95, 0.683); */
+  border: 2px solid white;
+}
+
+
+/* TRYING TO FIX PATIENTS CARDS */
+/* .patients-adjusting-cards{
+  display: inline-block;
+} */
+
+.testurgent-cards{
+  position: absolute;
+  bottom: -100%;
+  margin: 0;
+  /* background-color: rgb(109, 41, 41); */
+}
 
 
 /*    RESPONSIVE HOME PAGE ADJUSTING IMAGE   */
@@ -50,6 +88,7 @@ figcaption{
 .h2themedics{
   font-size: 80px;
 }
+
 
 @media screen and (max-width: 999px) {
   figcaption{
@@ -59,6 +98,7 @@ figcaption{
     margin: 12 20%;
   }
   .h2themedics{
+    bottom: 0;
     font-size: 80px;
   }
   
