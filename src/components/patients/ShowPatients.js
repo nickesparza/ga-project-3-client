@@ -1,21 +1,26 @@
 import { useEffect, useState } from 'react'
-
 import { useParams, useNavigate } from 'react-router-dom'
 // // useParams will allow us to see our parameters
 // // useNavigate will allow us to navigate to a specific page
-
 import { Container, Card, Button } from 'react-bootstrap'
 
+//EXTRA THINGS TO THE SHOW PATIENT
 import LoadingScreen from '../shared/LoadingScreen'
 import EditPatientModal from './EditPatientModal'
 import DeletePatientModal from './DeletePatientModal'
 import { getOnePatient, attendPatient } from '../../api/patients'
 import { updatePatient } from '../../api/patients'
 
-// import messages from '../shared/AutoDismissAlert/messages'
-// // import EditPetModal from './EditPetModal'
-// // import NewToyModal from '../toys/NewToyModal'
-// // import ShowToy from '../toys/ShowToy'
+
+//IMPORTING STYLES 
+import imgProfile from '../../imgs/profile.jpeg'
+
+//FLEX GRID
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+
+
 
 const ShowPatient = (props) => {
     //just on  Patient
@@ -63,46 +68,65 @@ const ShowPatient = (props) => {
     // console.log('params in show Patient', params)
     return (
         <>
-            <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
-                <Card style={{width: '30%',  margin: 5}}>
-                    <Card.Header><h2>{ patient.name }</h2></Card.Header>
-                    <Card.Body>
-                        <p>Age: {patient.age}</p>
-                        <p>Blood Type: {patient.bloodType}</p>
-                        <p>Urgent Contact: {patient.emergencyContact}</p>
-                        <p>preCon: {patient.preCon}</p>
-                        <p>currCon: {patient.currCon}</p>
-                        <p>doctors: {doctorList}</p>
-                        <p>treatment: {patient.treatment}</p>
-                        <p>comments: {patient.comments}</p>
-                    </Card.Body>
-                    <Card.Footer>
-                            <Button size='sm' className='mx-2' variant='info' onClick={() => setEditModalShow(true)}>
-                                Edit Patient
-                            </Button>
-                            <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
-                                Discharge Patient
-                            </Button>
-                    </Card.Footer>
-                </Card>
-                <Card style={{width: '30%',  margin: 5}}>
-                    <Card.Header><h4>Treatment</h4></Card.Header>
-                    <Card.Body>
-                        <p>this is The treatment for {patient.name }</p>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button size='sm' className='mx-2' variant='info' onClick={() => {
-                            setEditModalShow(true)
-                            setTreatmentModalShow(true)
-                            }}>
-                            Set Treatment
-                        </Button>
-                        <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
-                            Attend patient
-                        </Button>
-                    </Card.Footer>
-                </Card>
-            </div>
+                  {/*Patient CARD  */}
+                    {/* style={{width: '30%',  margin: 5}} */}
+                <div className='patient-treatment-cards'>
+                    <div className='holdCards'>
+                     {/*PATIENT CARD  */}
+                    <Card className='cards-patient-treat patient-card' >
+                        <div className='div-profile-IMG'>
+                            <img className='image' style={{maxWidth: '45%',margin: "5"}} src={imgProfile}/>
+                        </div>
+                           
+                        <Card.Header><h2 >{ patient.name }</h2></Card.Header>
+                        <Card.Body>
+                            <p className='p-info'>Age:</p><p>{patient.age}</p>
+                            <p className='p-info'>Blood Type:</p><p>{patient.bloodType}</p>
+                            <p className='p-info'>Emergency Contact:</p><p>{patient.emergencyContact}</p>
+                            <p className='p-info'>Pre-existing Conditions:</p><p>{patient.preCon}</p>
+                            <p className='p-info'>Current Condition:</p><p>{patient.currCon}</p>
+                            <p className='p-info'>Doctors:</p><p>{doctorList}</p>
+                            
+                        </Card.Body>
+                        <Card.Footer>
+                                <Button size='sm' className='mx-2' variant='info' onClick={() => setEditModalShow(true)}>
+                                    Edit Patient
+                                </Button>
+                                <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
+                                    Discharge Patient
+                                </Button>
+                        </Card.Footer>
+                    </Card> 
+                  
+               
+                    <Card className='cards-patient-treat treatment-card' >
+                        {/* <div  class="col" > */}
+                            <Card.Header><h4>Treatment</h4></Card.Header>
+                            <Card.Body>
+                                <p className='p-info'>Treatment:</p><p>{patient.treatment}</p>
+                                <p className='p-info'>Comments:</p><p>{patient.comments}</p>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Button size='sm' className='mx-2' variant='info' onClick={() => {
+                                    setEditModalShow(true)
+                                    setTreatmentModalShow(true)
+                                    }}>
+                                    Set Treatment
+                                </Button>
+                                <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
+                                    Attend patient
+                                </Button>
+                            </Card.Footer>
+                        {/* </div> */}
+                    </Card>
+                   {/* </div> */}
+
+                   </div>
+                    
+
+                </div>
+
+        {/* </div> */}
             <EditPatientModal
                 // modal needs patient info to populate fields
                 patient={patient}
@@ -141,17 +165,3 @@ const ShowPatient = (props) => {
 }
 
 export default ShowPatient
-
-
-
-
-// // We need to get the pet's id from the parameters
-// // Then we need to make a request to the api
-// // Then we need to display the results in this component
-
-// // we'll use a style object to lay out the toy cards
-// const cardContainerLayout = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     flexFlow: 'row wrap'
-// }

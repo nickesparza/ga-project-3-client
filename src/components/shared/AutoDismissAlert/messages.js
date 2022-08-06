@@ -8,6 +8,8 @@ const messages = {
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	getPatientsFailure: 'Error fetching patients.',
     showPatientFailure: 'Error getting patient details.',
+    createPatientSuccess: 'Patient intake successful.',
+    createPatientFailure: 'Something went wrong during intake. Please try again.',
     editPatientSuccess: 'Patient was successfully updated.',
     editPatientFailure: 'There was a problem updating this patient. Please try again.',
     deletePatientSuccess: 'Patient was successfully discharged.',

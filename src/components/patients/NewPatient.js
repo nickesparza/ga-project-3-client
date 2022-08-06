@@ -45,15 +45,15 @@ const NewPatient = (props) => {
             .then(() => {
                 msgAlert({
                     heading: 'Success',
-                    message: 'Patient Created',
+                    message: messages.createPatientSuccess,
                     variant: 'success'
                 })
             })
             .catch((err) => {
                 console.log(err)
                 msgAlert({
-                    heading: 'Oh no!',
-                    message: 'failed to create patient',
+                    heading: 'Warning',
+                    message: messages.createPatientFailure,
                     variant: 'danger'
                 })
             })
