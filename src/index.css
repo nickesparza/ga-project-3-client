@@ -1,11 +1,24 @@
 body {
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.navar-MASTER{
+  color: brown;
+}
+
+.body-home-page{
+  height: 1200px;
+  background-image: linear-gradient(to bottom right, rgb(254, 254, 254),rgba(220, 217, 217, 0.99));
+}
+.copyrights-hm-page{
+  margin-bottom: 0%;
+}
+
 .p-info{
   font-weight: bold;
 }
@@ -23,12 +36,14 @@ code {
 .h2themedics{
   font-size: 65px;
 }
-.footerHomeBody{
-  margin-bottom: 1px;
+/* footer{
+  margin-top: 50%;
+} */
+/* .footerHomeBody{
+  margin-bottom: 0;
   background-color: aquamarine;
   justify-content: flex-end;
-  /*  */
-}
+} */
 
 .patient-treatment-cards{
     

@@ -9,27 +9,31 @@ const Home = (props) => {
 	return (
 		
 		<div className="homeContainerMiddleBody">
-			<h2 className="h2themedics">The Medics</h2>
+				<div className="body-home-page">
 
-			<h3>See the Patients</h3>
-			{
-                user
-                ?
-                <PatientIndex 
-                    msgAlert= { msgAlert }
-                    user={user}
-                />
-                :
-                <p>log in to see patients.</p>
-            }
+				
+						<h2 className="h2themedics">The Medics</h2>
 
-			<footer className="footerHomeBody">
-					<h3>
-						ola.
-					</h3>
-			</footer>
-			
+						<h3>See the Patients</h3>
+						{
+							user
+							?
+							<PatientIndex 
+								msgAlert= { msgAlert }
+								user={user}
+							/>
+							:
+							
+							<p>log in to see patients.</p>
+							
+							
+						}
 
+						<footer className="footerHomeBody">
+								
+						</footer>
+
+				</div>
 		</div>
 			
 
