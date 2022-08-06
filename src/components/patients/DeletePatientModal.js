@@ -4,7 +4,7 @@ import { Modal, Button } from "react-bootstrap"
 import messages from '../shared/AutoDismissAlert/messages'
 import { deletePatient } from '../../api/patients'
 
-const EditPatientModal = (props) => {
+const DeletePatientModal = (props) => {
     const {patient, msgAlert, show, user, handleClose} = props
     const navigate = useNavigate()
 
@@ -15,7 +15,7 @@ const EditPatientModal = (props) => {
             .then(() => {
                 msgAlert({
                     heading: 'Success',
-                    message: 'patient was successfully discharged',
+                    message: messages.deletePatientSuccess,
                     variant: 'success'
                 })
             })
@@ -23,7 +23,7 @@ const EditPatientModal = (props) => {
             .catch(() => {
                 msgAlert({
                     heading: 'Oops...',
-                    message: 'patient was not deleted.',
+                    message: messages.deletePatientFailure,
                     variant: 'danger'
                 })
             })
@@ -32,9 +32,11 @@ const EditPatientModal = (props) => {
     return(
         <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton />
+                <Modal.Header closeButton>
+                    <h2>Discharge Patient</h2>
+                </Modal.Header>
                 <Modal.Body>
-                    Are you sure you wish to discharge this patient?
+                    <p>Are you sure you wish to discharge this patient?</p>
                     <Button variant='primary' className='mx-2' onClick={() => {
                         dischargePatient()
                     }}>Yes</Button>
@@ -45,4 +47,4 @@ const EditPatientModal = (props) => {
     )
 }
 
-export default EditPatientModal
+export default DeletePatientModal

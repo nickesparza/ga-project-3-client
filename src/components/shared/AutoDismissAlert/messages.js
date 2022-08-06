@@ -7,6 +7,11 @@ const messages = {
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	getPatientsFailure: 'Error fetching patients.',
+    showPatientFailure: 'Error getting patient details.',
+    editPatientSuccess: 'Patient was successfully updated.',
+    editPatientFailure: 'There was a problem updating this patient. Please try again.',
+    deletePatientSuccess: 'Patient was successfully discharged.',
+    deletePatientFailure: 'Something went wrong while deleting patient details. Please try again.',
 }
 
 module.exports = messages

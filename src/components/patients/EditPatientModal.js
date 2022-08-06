@@ -32,7 +32,7 @@ const EditPatientModal = (props) => {
             .then(() => {
                 msgAlert({
                     heading: 'Success',
-                    message: 'Patient has been edited.',
+                    message: messages.editPatientSuccess,
                     variant: 'success'
                 })
             })
@@ -40,7 +40,7 @@ const EditPatientModal = (props) => {
             .catch(() => {
                 msgAlert({
                     heading: 'Error',
-                    message: 'Patient was not edited.',
+                    message: messages.editPatientFailure,
                     variant: 'danger'
                 })
             })
@@ -49,7 +49,7 @@ const EditPatientModal = (props) => {
     return(
         <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton />
+                <Modal.Header closeButton/>
                 <Modal.Body>
                     {
                         treatmentModalShow

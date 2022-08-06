@@ -7,7 +7,7 @@ const PatientForm = (props) => {
 
     return (
         <Container className='justify-content-center'>
-            <h1>{heading}</h1>
+            <h2>{heading}</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label htmlFor='treatment'>Treatment Plan</Form.Label>
