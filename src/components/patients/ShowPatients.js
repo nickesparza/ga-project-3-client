@@ -1,21 +1,24 @@
 import { useEffect, useState } from 'react'
-
 import { useParams, useNavigate } from 'react-router-dom'
 // // useParams will allow us to see our parameters
 // // useNavigate will allow us to navigate to a specific page
-
 import { Container, Card, Button } from 'react-bootstrap'
 
+//EXTRA THINGS TO THE SHOW PATIENT
 import LoadingScreen from '../shared/LoadingScreen'
 import EditPatientModal from './EditPatientModal'
 import DeletePatientModal from './DeletePatientModal'
 import { getOnePatient, attendPatient } from '../../api/patients'
 import { updatePatient } from '../../api/patients'
 
-// import messages from '../shared/AutoDismissAlert/messages'
-// // import EditPetModal from './EditPetModal'
-// // import NewToyModal from '../toys/NewToyModal'
-// // import ShowToy from '../toys/ShowToy'
+
+//IMPORTING STYLES 
+import imgProfile from '../../imgs/profile.jpeg'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 
 const ShowPatient = (props) => {
     //just on  Patient
@@ -64,7 +67,9 @@ const ShowPatient = (props) => {
     return (
         <>
             <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
+
                 <Card style={{width: '30%',  margin: 5}}>
+                    <img src={imgProfile} ></img>
                     <Card.Header><h2>{ patient.name }</h2></Card.Header>
                     <Card.Body>
                         <p>Age: {patient.age}</p>
@@ -88,7 +93,8 @@ const ShowPatient = (props) => {
                             </Button>
                         }
                     </Card.Footer>
-                </Card>
+
+                </Card>  
                 <Card style={{width: '30%',  margin: 5}}>
                     <Card.Header><h4>Treatment</h4></Card.Header>
                     <Card.Body>
