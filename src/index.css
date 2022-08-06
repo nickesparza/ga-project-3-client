@@ -12,7 +12,7 @@ body {
 }
 
 .body-home-page{
-  height: 1200px;
+  /* height: 1200px; */
   background-image: linear-gradient(to bottom right, rgb(254, 254, 254),rgba(220, 217, 217, 0.99));
 }
 .copyrights-hm-page{
@@ -51,12 +51,10 @@ code {
   text-align: center;
   display: flex;
 }
+
 .image{
   border-radius: 20px;
 }
-
-
-
 
 @media (min-width: 501px){
   .patient-treatment-cards{
@@ -88,11 +86,11 @@ code {
 @media (max-width: 500px){
   .patient-treatment-cards{
     background-color: red;
-    
     text-align: center;
     display: block;
     justify-content: center;
   }
+
   .holdCards{
     justify-content: center;
     margin-top: 2%;
