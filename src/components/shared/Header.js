@@ -48,7 +48,8 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar className='navar-MASTER' bg='primary' variant='dark' expand='md'>
+	// bg='primary'
+	<Navbar className='navBar-MASTER'  variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
                 The Medic App

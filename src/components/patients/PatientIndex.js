@@ -10,6 +10,9 @@ import { getAllPatients } from '../../api/patients'
 
 import messages from '../shared/AutoDismissAlert/messages'
 
+//IMPORTING STYLES 
+import imgProfile from '../../imgs/profile.jpeg'
+
 
 // STYLE FOR CARDs
 const cardContainerStyle = {
@@ -60,15 +63,22 @@ const PatientIndex = (props) => {
     // if there is no user, tell them to log in
 
     const patientCards = patients.map(patient => (
-        <Card style={{width: '30%',  margin: 5}} key={patient._id}>
-            <Card.Header>{ patient.name }</Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    <Link to={`/patients/${patient._id}`}>View {patient.name}</Link> 
-                </Card.Text>
-               
-            </Card.Body>
-        </Card>
+       
+
+        
+            <Card style={{width: '30%',  margin: 5}} key={patient._id}>
+                <div className='div-profile-IMG'>
+                            <img className='image' style={{width: '45%',margin: 5}} src={imgProfile} ></img>
+                </div>
+                <Card.Header>{ patient.name }</Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                        <Link to={`/patients/${patient._id}`}><p className='p-info'  >View:</p>  {patient.name}</Link> 
+                    </Card.Text>
+                
+                </Card.Body>
+            </Card>
+       
         ))
 
 

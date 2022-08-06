@@ -29,9 +29,7 @@ const Home = (props) => {
 							
 						}
 
-						<footer className="footerHomeBody">
-								
-						</footer>
+						
 
 				</div>
 		</div>
