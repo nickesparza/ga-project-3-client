@@ -38,29 +38,25 @@ width: 1300px;
 
 
 figcaption {
-  width: 900px;
+  /* width: 900px; */
   position: absolute;
   bottom: 45%;
-  /* margin: 0 30%; */
-  margin-left: 4%;
-  margin-top: -20%;
+  background-color: aqua;
+  margin: 0 30%;
+ padding-top: 1px;
+  /* margin-top: 100%; */
 }
 figcaption .controlOnlyCards{
-  width: 900px;
+  /* if turn this on .. it mess with the layout for the card... but this one also control the patient cards..... */
+  /*  try to turn off "boolean" the text on the screen when you log in and start to show patients... */
+  /* width: 80px;  this control the width for the patients cards */
  
   bottom: 45%;
   /* margin: 0 30%; */
-  margin-top: 100%;
+  /* margin-top: 100%; */
   /* margin-top: -20%; */
 
 }
-
-
-
-
-
-
-
 
 /* STYLING TEXTS HOME PAGE */
 .styling-Texts{

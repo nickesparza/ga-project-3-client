@@ -15,7 +15,7 @@ const Home = (props) => {
 					<Container >
 						<figure className="position-relative" >
 							<div className="img-dr-control">
-								<img className="img-smile-doctor img-fluid position-relative position-fixed" src={doctorPicture} />
+								<img className="img-smile-doctor img-fluid position-relative" src={doctorPicture} />
 							</div>
 								
 							<figcaption >
