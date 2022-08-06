@@ -68,27 +68,29 @@ const ShowPatient = (props) => {
     // console.log('params in show Patient', params)
     return (
         <>
-         
-            {/* <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}> */}
-
                   {/*Patient CARD  */}
-            <div className='container text-center'>
-
-                <div class="row">
                     {/* style={{width: '30%',  margin: 5}} */}
-                    <Card class="row row-cols-1 row-cols-sm-2 row-cols-md-4" >
-                        <div class="col" >
-                            <img  style={{width: '45%',  margin: 5}} src={imgProfile} ></img>
-                            <Card.Header><h2>{ patient.name }</h2></Card.Header>
+                <div className='patient-treatment-cards'>
+                    <div className='holdCards'>
+
+                
+                     {/*PATIENT CARD  */}
+                    <Card className='cards-patient-treat patient-card' >
+                        <div className='div-profile-IMG'>
+                        <img className='image' style={{width: '45%',margin: 5}} src={imgProfile} ></img>
+
+                        </div>
+                           
+                            <Card.Header><h2 >{ patient.name }</h2></Card.Header>
                             <Card.Body>
-                                <p>Age: {patient.age}</p>
-                                <p>Blood Type: {patient.bloodType}</p>
-                                <p>Urgent Contact: {patient.emergencyContact}</p>
-                                <p>preCon: {patient.preCon}</p>
-                                <p>currCon: {patient.currCon}</p>
-                                <p>doctors: {doctorList}</p>
-                                <p>treatment: {patient.treatment}</p>
-                                <p>comments: {patient.comments}</p>
+                                <p ><p className='p-info'>Age: </p>{patient.age}</p>
+                                <p> <p className='p-info'>Blood Type:</p>  {patient.bloodType}</p>
+                                <p> <p className='p-info'>Urgent Contact:</p>  {patient.emergencyContact}</p>
+                                <p> <p className='p-info'>PreCon:</p>  {patient.preCon}</p>
+                                <p> <p className='p-info'>CurrCon:</p>  {patient.currCon}</p>
+                                <p> <p className='p-info'>Doctors:</p>  {doctorList}</p>
+                                <p> <p className='p-info'>Treatment:</p>  {patient.treatment}</p>
+                                <p> <p className='p-info'>Comments:</p>  {patient.comments}</p>
                             </Card.Body>
                             <Card.Footer>
                                 {
@@ -102,18 +104,13 @@ const ShowPatient = (props) => {
                                     </Button>
                                 }
                             </Card.Footer>
-                        </div>
+                       
 
                     </Card> 
-                </div> {/*  row  */}
-                    
-
-
-                    {/*TREATMENT CARD  */}
-                <div class="row">
-                    {/* style={{width: '30%',  margin: 5}} */}
-                    <Card class="row row-cols-1 row-cols-sm-2 row-cols-md-4" >
-                        <div  class="col" >
+                  
+               
+                    <Card className='cards-patient-treat treatment-card' >
+                        {/* <div  class="col" > */}
 
                         
                             <Card.Header><h4>Treatment</h4></Card.Header>
@@ -131,14 +128,16 @@ const ShowPatient = (props) => {
                                     Attend patient
                                 </Button>
                             </Card.Footer>
-                        </div>
+                        {/* </div> */}
                     </Card>
+                   {/* </div> */}
 
+                   </div>
                     
 
                 </div>
 
-        </div> {/*  container  */}
+        {/* </div> */}
             <EditPatientModal
                 // modal needs patient info to populate fields
                 patient={patient}

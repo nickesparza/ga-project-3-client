@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.p-info{
+  font-weight: bold;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -26,3 +29,86 @@ code {
   justify-content: flex-end;
   /*  */
 }
+
+.patient-treatment-cards{
+    
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.image{
+  border-radius: 20px;
+}
+
+
+
+
+@media (min-width: 501px){
+  .patient-treatment-cards{
+    background-color: rgb(92, 98, 91);
+    justify-content: center;
+    text-align: center;
+    /* width: 40%; */
+    /* align-items: center;  vertical center */
+   
+  }
+  .holdCards{
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+  }
+  .cards-patient-treat{
+    justify-content: center;
+    /* width: 50%; */
+  }
+  .treatment-card{
+    width: 60%;
+  }
+  .patient-card{
+    width: 60%;
+  }
+} 
+
+@media (max-width: 500px){
+  .patient-treatment-cards{
+    background-color: red;
+    
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .holdCards{
+    justify-content: center;
+    margin-top: 2%;
+    
+    margin-left: 1%;
+    margin-right: -1%;
+
+  }
+  .cards-patient-treat{
+    justify-content: center;
+    
+  }
+  .treatment-card{
+    
+    width: 98%;
+  }
+  .patient-card{
+    width: 98%;
+  }
+} 
+
+/* .patient-treatment-cards{
+    
+  justify-content: center;
+  text-align: center;
+ 
+  display: flex;
+} */
+/* .cards-patient-treat{
+  width: 30%;
+} */
+
+
+
