@@ -63,18 +63,20 @@ const ShowPatient = (props) => {
     // console.log('params in show Patient', params)
     return (
         <>
+        <div className='backImg-cards'>
             <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
                 <Card style={{width: '30%',  margin: 5}}>
                     <Card.Header><h2>{ patient.name }</h2></Card.Header>
                     <Card.Body>
-                        <p>Age: {patient.age}</p>
-                        <p>Blood Type: {patient.bloodType}</p>
-                        <p>Urgent Contact: {patient.emergencyContact}</p>
-                        <p>preCon: {patient.preCon}</p>
-                        <p>currCon: {patient.currCon}</p>
-                        <p>doctors: {doctorList}</p>
-                        <p>treatment: {patient.treatment}</p>
-                        <p>comments: {patient.comments}</p>
+                        
+                        <p><p className='text-info-patient'>Age: </p>{patient.age}</p>
+                        <p><p className='text-info-patient'>Blood Type:</p> {patient.bloodType}</p>
+                        <p><p className='text-info-patient'>Urgent Contact:</p> {patient.emergencyContact}</p>
+                        <p><p className='text-info-patient'>PreCon:</p> {patient.preCon}</p>
+                        <p><p className='text-info-patient'>CurrCon:</p> {patient.currCon}</p>
+                        <p><p className='text-info-patient'>Doctors:</p> {doctorList}</p>
+                        <p><p className='text-info-patient'>Treatment:</p> {patient.treatment}</p>
+                        <p><p className='text-info-patient'>Comments:</p> {patient.comments}</p>
                     </Card.Body>
                     <Card.Footer>
                         {
@@ -134,6 +136,8 @@ const ShowPatient = (props) => {
                 show={deleteModalShow}
                 handleClose={() => setDeleteModalShow(false)}
             />
+
+            </div>
         </>
     )
 }

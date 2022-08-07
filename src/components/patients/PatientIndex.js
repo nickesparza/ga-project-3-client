@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 import { Link, useNavigate } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPatients } from '../../api/patients'
+import profilePicture from '../../imgs/profile.jpeg'
 
 import messages from '../shared/AutoDismissAlert/messages'
 
@@ -61,6 +62,7 @@ const PatientIndex = (props) => {
 
     const patientCards = patients.map(patient => (
         <Card style={{width: '30%',  margin: 5}} key={patient._id}>
+            <img className='profile-img-adjust' src={profilePicture}></img>
             <Card.Header>{ patient.name }</Card.Header>
             <Card.Body>
                 <Card.Text>

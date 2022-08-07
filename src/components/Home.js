@@ -10,29 +10,33 @@ const Home = (props) => {
 	return (
 		
 		<div className="homeContainerMiddleBody">
-			<div className="image-doctor">
-				<image src={doctorSmilePic}></image>
+			{/* <div className="image-doctor"> */}
+				{/* <img className="dr-picture img-fuild" src={doctorSmilePic}></img> */}
+			{/* </div> */}
+
+			<div className="hold-afterpicture">
+
+					<h2 className="h2themedics">The Medics</h2>
+
+					<h3>See the Patients</h3>
+					{
+						user
+						?
+						<PatientIndex 
+							msgAlert= { msgAlert }
+							user={user}
+						/>
+						:
+						<p>log in to see patients.</p>
+					}
+
 			</div>
 
-			<h2 className="h2themedics">The Medics</h2>
-
-			<h3>See the Patients</h3>
-			{
-                user
-                ?
-                <PatientIndex 
-                    msgAlert= { msgAlert }
-                    user={user}
-                />
-                :
-                <p>log in to see patients.</p>
-            }
-
-			<footer className="footerHomeBody">
+			{/* <footer className="footerHomeBody">
 					<h3>
 						ola.
 					</h3>
-			</footer>
+			</footer> */}
 			
 
 		</div>

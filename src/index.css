@@ -21,10 +21,27 @@ code {
 
 /* Only contrl the back screen */
 .homeContainerMiddleBody{
-
+background-image: url('/src/imgs/doctorsmile.jpeg');
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+/* height: 800px; */
+/* position: fixed; */
+/* bottom: 0%; */
+/* background-attachment:  fixed; */
   text-align: center;
   position: relative;
 }
+.hold-afterpicture{
+  height: 700px;
+  /* min-height: 500px; */
+
+}
+.dr-picture{
+  position: relative;
+}
+
+
+
 /* size of the text */
 .h2themedics{
   font-size: 65px;
@@ -33,7 +50,29 @@ code {
   margin-bottom: 1px;
   background-color: aquamarine;
   justify-content: flex-end;
-  /*  */
+  
+}
+
+
+/* text-info-patient */
+.text-info-patient{
+  font-weight: bold;
+}
+
+/* ADJUSTING PROFILE IMG */
+.profile-img-adjust{
+  border-radius: 20px;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+
+/* SHOWING PATIENTS CARDS */
+.backImg-cards{
+background-image: url('/src/imgs/img2.jpeg');
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+/* height: auto; */
+
 }
 
 
