@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
-import ToyForm from '../shared/ToyForm'
+import MedicineForm from '../shared/MedicineForm'
 import { updateToy } from '../../api/toys'
 
 
