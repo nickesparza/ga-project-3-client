@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
-import ToyForm from '../shared/ToyForm'
-import { createToy } from '../../api/toys'
+import MedicineForm from '../shared/MedicineForm'
+import { createToy } from '../../api/medicines'
 
 
-const NewToyModal = (props) => {
+const NewMedicineModal = (props) => {
     const { 
-        user, pet, show, handleClose, msgAlert, triggerRefresh
+        user, patient, show, handleClose, msgAlert, triggerRefresh
     } = props
 
-    const [toy, setToy] = useState({})
+    const [medicine, setMedicine] = useState({})
 
-    console.log('pet in edit modal', pet)
+    console.log('medicine in edit modal', medicine)
 
     const handleChange = (e) => {
         setToy(prevToy => {
@@ -21,18 +21,18 @@ const NewToyModal = (props) => {
             console.log('this is the input type', e.target.type)
 
             // this handles the checkbox, changing on to true etc
-            if (name === "isSqueaky" && e.target.checked) {
-                value = true
-            } else if (name === "isSqueaky" && !e.target.checked) {
-                value = false
-            }
+            // if (name === "isSqueaky" && e.target.checked) {
+            //     value = true
+            // } else if (name === "isSqueaky" && !e.target.checked) {
+            //     value = false
+            // }
 
-            const updatedToy = {
+            const updatedMedicine = {
                 [name]: value
             }
             return {
-                ...prevToy,
-                ...updatedToy
+                ...prevMedicine,
+                ...updatedMedicine
             }
         })
     }
@@ -41,14 +41,14 @@ const NewToyModal = (props) => {
         // e equals the event
         e.preventDefault()
 
-        createToy(user, pet._id, toy)
+        createMedicine(user, patient._id, medicine)
             // if we're successful in the modal, we want the modal to close
             .then(() => handleClose())
             // send a success message to the user
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
-                    message: 'Great! The pet loves it!',
+                    message: 'We Are On Road To Recovery',
                     variant: 'success'
                 })
             })
@@ -71,11 +71,11 @@ const NewToyModal = (props) => {
                     toy={toy}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Give the pet a toy!"
+                    heading="Prescribe The Medicine To The Patient!"
                 />
             </Modal.Body>
         </Modal>
     )
 }
 
-export default NewToyModal
+export default NewMedicineModal

@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
 import { Card, Button } from 'react-bootstrap'
-import EditToyModal from './EditToyModal'
-import { deleteToy } from '../../api/toys'
+import EditMedicineModal from './EditMedicineModal'
+import { deleteToy } from '../../api/medicines'
 
-const ShowToy = (props) => {
+const ShowMedicine = (props) => {
     // destructure some props
-    const { toy, pet, user, msgAlert, triggerRefresh } = props
+    const { medicine, patient, user, msgAlert, triggerRefresh } = props
 
     // here's where we'll put a hook to open the edit toy modal when we get there
     const [editModalShow, setEditModalShow] = useState(false)
 
     // this will set a color depending on the toy's condition
-    const setBgCondition = (cond) => {
-        if (cond === 'new') {
-            return({width: '18rem', backgroundColor:'#b5ead7'})
-        } else if (cond === 'used') {
-            return({width: '18rem', backgroundColor:'#ffdac1'})
-        } else {
-            return({width: '18rem', backgroundColor:'#ff9aa2'})
-        }
-    }
+    // const setBgCondition = (cond) => {
+    //     if (cond === 'new') {
+    //         return({width: '18rem', backgroundColor:'#b5ead7'})
+    //     } else if (cond === 'used') {
+    //         return({width: '18rem', backgroundColor:'#ffdac1'})
+    //     } else {
+    //         return({width: '18rem', backgroundColor:'#ff9aa2'})
+    //     }
+    // }
 
-    // calls this to destroy a toy
-    const destroyToy = () => {
-        deleteToy(user, pet._id, toy._id)
+    // calls this to destroy a medicine
+    const destroyMedicine = () => {
+        deleteMedicine(user, patient._id, medicine._id)
             .then(() => 
                 msgAlert({
-                    heading: 'Toy Deleted',
-                    message: 'Bye bye toy!',
+                    heading: 'Medication Deleted',
+                    message: 'Bye bye med!',
                     variant: 'success'
                 }))
             .then(() => triggerRefresh())
@@ -41,31 +41,31 @@ const ShowToy = (props) => {
 
     return (
         <>
-            <Card className="m-2" style={setBgCondition(toy.condition)}>
-                <Card.Header>{toy.name}</Card.Header>
+            <Card>
+                <Card.Header>{medicine.name}</Card.Header>
                 <Card.Body>
-                    <small>{toy.description}</small><br/>
-                    <small>
+                    <small>{medicine.dosage}</small><br/>
+                    {/* <small>
                         {toy.isSqueaky ? 'squeak squeak' : 'stoic silence'}
-                    </small>
+                    </small> */}
                 </Card.Body>
                 <Card.Footer>
-                    <small>Condition: {toy.condition}</small><br/>
+                    <small>Condition: {medicine.duration}</small><br/>
                     {
-                        user && user._id === pet.owner._id
+                        user && user._id === patient.owner._id
                         ?
                         <>
                             <Button 
                                 variant="warning"
                                 onClick={() => setEditModalShow(true)}
                             >
-                                Edit Toy
+                                Edit Medicine
                             </Button>
                             <Button 
-                                onClick={() => destroyToy()} 
+                                onClick={() => destroyMedicine()} 
                                 variant="danger"
                             >
-                                Delete Toy
+                                Delete Medicine
                             </Button>
                         </>
                         :
@@ -73,10 +73,10 @@ const ShowToy = (props) => {
                     }
                 </Card.Footer>
             </Card>
-            <EditToyModal
+            <EditMedicineModal
                 user={user}
-                pet={pet}
-                toy={toy}
+                patient={patient}
+                medicine={medicine}
                 show={editModalShow}
                 handleClose={() => setEditModalShow(false)}
                 msgAlert={msgAlert}
@@ -86,4 +86,4 @@ const ShowToy = (props) => {
     )
 }
 
-export default ShowToy
+export default ShowMedicine
