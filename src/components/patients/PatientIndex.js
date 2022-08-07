@@ -70,7 +70,9 @@ const PatientIndex = (props) => {
 
         
 
-        
+        <div className='patient-cards-adjust'>
+
+       
             <Card style={{width: '30%',  margin: 5}} key={patient._id}>
                 <div className='div-profile-IMG'>
                         <img className='image' style={{width: '45%',margin: 5}} src={imgProfile} ></img>
@@ -85,6 +87,7 @@ const PatientIndex = (props) => {
             </Card>
 
             
+        </div>
 
             
        

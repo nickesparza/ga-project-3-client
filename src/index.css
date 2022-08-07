@@ -46,15 +46,22 @@ figcaption {
  padding-top: 1px;
   /* margin-top: 100%; */
 }
-figcaption .controlOnlyCards{
+/* figcaption .controlOnlyCards{ */
   /* if turn this on .. it mess with the layout for the card... but this one also control the patient cards..... */
   /*  try to turn off "boolean" the text on the screen when you log in and start to show patients... */
   /* width: 80px;  this control the width for the patients cards */
- 
-  bottom: 45%;
+ /* display: flex; */
+  /* bottom: 45%; */
   /* margin: 0 30%; */
   /* margin-top: 100%; */
   /* margin-top: -20%; */
+
+/* } */
+.patient-cards-adjust{
+  /* this control the width for the patients cards */
+    width: 650px;
+    margin-top: 1%;  
+    display: flex;
 
 }
 
@@ -159,6 +166,12 @@ figcaption .controlOnlyCards{
   }
   .h2themedics{
     font-size: 30px;
+  }
+  .patient-cards-adjust{
+    /* this control the width for the patients cards */
+      width: 650px;
+      margin-top: 1%;  
+  
   }
   
 }
