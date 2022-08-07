@@ -38,10 +38,11 @@ const PatientIndex = (props) => {
                 heading: 'Error Getting Patients',
                 message: messages.getPatientsFailure,
                 variant: 'danger',
-            })})
+            })
+        })
         // if there is no user, console log this message.. no showing the patients....
         } else {
-            setPatients([])
+            navigate('/')
         }
     }, [user])
 
@@ -85,9 +86,6 @@ const PatientIndex = (props) => {
 
     // return <h1>This is Patients Index</h1>
 }
-
-
-
 
 
 export default PatientIndex
