@@ -1,4 +1,5 @@
 import PatientIndex from "./patients/PatientIndex"
+import doctorSmilePic from "../imgs/doctorsmile.jpeg"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -9,6 +10,10 @@ const Home = (props) => {
 	return (
 		
 		<div className="homeContainerMiddleBody">
+			<div className="image-doctor">
+				<image src={doctorSmilePic}></image>
+			</div>
+
 			<h2 className="h2themedics">The Medics</h2>
 
 			<h3>See the Patients</h3>

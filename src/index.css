@@ -12,11 +12,20 @@ code {
     monospace;
 }
 
+/* COLOR NAV BAR TOP */
+.navBar-Master{
+  background-color: rgb(58 ,95, 95);
+}
+
+
+
+/* Only contrl the back screen */
 .homeContainerMiddleBody{
 
   text-align: center;
   position: relative;
 }
+/* size of the text */
 .h2themedics{
   font-size: 65px;
 }
@@ -26,3 +35,6 @@ code {
   justify-content: flex-end;
   /*  */
 }
+
+
+/* class="img-fluid  */
