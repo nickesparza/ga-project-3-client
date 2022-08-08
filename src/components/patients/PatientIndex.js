@@ -61,7 +61,7 @@ const PatientIndex = (props) => {
     // if there is no user, tell them to log in
 
     const patientCards = patients.map(patient => (
-        <Card style={{width: '30%',  margin: 5}} key={patient._id}>
+        <Card className='individual-cards' style={{width: '30%',  margin: 5}} key={patient._id}>
             <img className='profile-img-adjust' src={profilePicture}></img>
             <Card.Header>{ patient.name }</Card.Header>
             <Card.Body>
