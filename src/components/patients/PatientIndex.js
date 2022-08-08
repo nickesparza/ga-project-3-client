@@ -3,7 +3,7 @@ import {
     useEffect 
 } from 'react'
 // import { propTypes } from 'react-bootstrap/esm/Image'
-import {Container, Card, Row, Image} from 'react-bootstrap'
+import {Container, Card, Row, Col, Image} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPatients } from '../../api/patients'
@@ -63,24 +63,26 @@ const PatientIndex = (props) => {
     // if there is no user, tell them to log in
 
     const patientCards = patients.map(patient => (
-        <Card style={{width: '20rem',  margin: 5, padding: 0, borderRadius:'20px', backgroundColor:'rgb(58 ,95, 95)', color:'white'}} key={patient._id}>
-            <Card.Header>{ patient.name }</Card.Header>
-            <Link to={`/patients/${patient._id}`}>
-                <Image fluid={true} src={profilePicture}/>
-            </Link>
-            <Card.Body>
-                <Card.Text>
-                    <Link style={{color: 'white'}} to={`/patients/${patient._id}`}>View</Link> 
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <Col md='4'>
+            <Card style={{width: '100%', margin: 5, borderRadius:'20px', backgroundColor:'rgb(58 ,95, 95)', color:'white'}} key={patient._id}>
+                <Card.Header>{ patient.name }</Card.Header>
+                <Link to={`/patients/${patient._id}`}>
+                    <Image fluid={true} src={profilePicture} alt='placeholder image for patient photo'/>
+                </Link>
+                <Card.Body>
+                    <Card.Text>
+                        <Link style={{color: 'white'}} to={`/patients/${patient._id}`}>View</Link> 
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </Col>
         ))
 
 
         //SHOWING PATIENT CARDS ON BODY
         return(
-            <Container fluid='md'>
-                <Row style={cardContainerStyle}>
+            <Container>
+                <Row style={cardContainerStyle} className='justify-content-center'>
                     { patientCards }
                 </Row>
             </Container>
