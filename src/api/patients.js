@@ -54,6 +54,9 @@ export const createPatient = (user, newPatient) => {
 
 // PATCH patient
 export const updatePatient = (user, updatedPatient) => {
+    if (updatedPatient.doctors.length === 0) {
+        updatedPatient.doctors = null
+    }
     return axios({
         url: `${apiUrl}/patients/${updatedPatient._id}`,
         method: 'PATCH',
