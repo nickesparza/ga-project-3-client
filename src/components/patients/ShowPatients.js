@@ -26,7 +26,7 @@ import imgProfile from '../../imgs/profile.jpeg'
 
 const ShowPatient = (props) => {
     //just on  Patient
-    const[patient, setPatient] = useState(null) //null because dont wanna show nothing now
+    const [patient, setPatient] = useState(null) //null because dont wanna show nothing now
     const [editModalShow, setEditModalShow] = useState(false)
     const [deleteModalShow, setDeleteModalShow] = useState(false)
     const [treatmentModalShow, setTreatmentModalShow] = useState(false)
