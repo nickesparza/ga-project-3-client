@@ -29,6 +29,9 @@ const EditPatientModal = (props) => {
         e.preventDefault()
         patient.doctors = props.patient.doctors
         patient.medicines = props.patient.medicines
+        if (!patient.treatment) {
+            patient.treatment = 'No treatment assigned.'
+        }
         updatePatient(user, patient)
             .then(() => handleClose())
             .then(() => {
