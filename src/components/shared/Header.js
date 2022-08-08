@@ -9,6 +9,11 @@ const linkStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
+			<Link to='add-patient' style={linkStyle}>
+				Patient Intake
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-2'>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
 			</Link>
@@ -16,11 +21,6 @@ const authenticatedOptions = (
 		<Nav.Item className='m-2'>
 			<Link to='sign-out' style={linkStyle}>
 				Sign Out
-			</Link>
-		</Nav.Item>
-		<Nav.Item className='m-2'>
-			<Link to='add-patient' style={linkStyle}>
-				Patient Intake
 			</Link>
 		</Nav.Item>
 	</>
@@ -49,7 +49,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<Navbar className='navBar-Master' variant='dark' expand='md'>
-		<Navbar.Brand>
+		<Navbar.Brand className='mx-2'>
             <Link to='/' style={linkStyle}>
                 The Medic App
             </Link>

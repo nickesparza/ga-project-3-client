@@ -93,8 +93,8 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>
-                        Submit
+                    <Button className='my-2' variant='primary' type='submit'>
+                        Create Account
                     </Button>
                 </Form>
             </div>
