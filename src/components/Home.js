@@ -1,5 +1,4 @@
 import PatientIndex from "./patients/PatientIndex"
-import doctorSmilePic from "../imgs/doctorsmile.jpeg"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props

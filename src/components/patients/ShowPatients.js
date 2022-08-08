@@ -34,7 +34,7 @@ const ShowPatient = (props) => {
     const [updated, setUpdated] = useState(false)
 
     const {user, msgAlert} = props
-
+    console.log('this is the patient in ShowPatient', patient)
     const { id } = useParams()
     const navigate = useNavigate()
     //get the i value from our route paramaters
@@ -47,6 +47,7 @@ const ShowPatient = (props) => {
         } else {
             navigate('/sign-in')
         }
+    // eslint-disable-next-line
     }, [updated])
 
     if(!patient) {
@@ -77,6 +78,13 @@ const ShowPatient = (props) => {
     const toggleDoctor = () => {
         attendPatient(user, patient)
             .then(setUpdated(prev => !prev))
+            .then(() => {
+                msgAlert({
+                    heading: 'Success',
+                    message: 'Doctor added.',
+                    variant: 'success'
+                })
+            })
             .catch(() => {
                 msgAlert({
                     heading: 'Error',

@@ -3,7 +3,7 @@ import {
     useEffect 
 } from 'react'
 // import { propTypes } from 'react-bootstrap/esm/Image'
-import {Container, Card, Row, Col, Image} from 'react-bootstrap'
+import {Container, Card, Row, Image} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllPatients } from '../../api/patients'
@@ -45,6 +45,7 @@ const PatientIndex = (props) => {
         } else {
             navigate('/')
         }
+    // eslint-disable-next-line
     }, [user])
 
     // if (error) {
