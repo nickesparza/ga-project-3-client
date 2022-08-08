@@ -11,14 +11,14 @@ const NewMedicineModal = (props) => {
 
     const [medicine, setMedicine] = useState({})
 
-    console.log('medicine in edit modal', medicine)
+    // console.log('medicine in edit modal', medicine)
 
     const handleChange = (e) => {
         setMedicine(prevMedicine => {
             let value = e.target.value
             const name = e.target.name
 
-            console.log('this is the input type', e.target.type)
+            // console.log('this is the input type', e.target.type)
 
             // this handles the checkbox, changing on to true etc
             // if (name === "isSqueaky" && e.target.checked) {

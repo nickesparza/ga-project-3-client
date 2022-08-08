@@ -34,7 +34,7 @@ const ShowPatient = (props) => {
     const [updated, setUpdated] = useState(false)
 
     const {user, msgAlert} = props
-    console.log('this is the patient in ShowPatient', patient)
+    // console.log('this is the patient in ShowPatient', patient)
     const { id } = useParams()
     const navigate = useNavigate()
     //get the i value from our route paramaters
@@ -56,7 +56,7 @@ const ShowPatient = (props) => {
 
     let medCards
     if (patient) {
-        console.log('these are the medicines in patient', patient.medicines)
+        // console.log('these are the medicines in patient', patient.medicines)
         if (patient.medicines.length > 0) {
             medCards = patient.medicines.map(medicine => (
                 <ShowMedicine

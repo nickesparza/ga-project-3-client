@@ -26,9 +26,9 @@ const PatientIndex = (props) => {
     const { msgAlert } = props
     const { user } = props
     const navigate = useNavigate()
-    console.log('user in PatientIndex', user)
+    // console.log('user in PatientIndex', user)
     useEffect(() => {
-        console.log('useEffect has run')
+        // console.log('useEffect has run')
         if (user) {
             getAllPatients(user)
             // .then(res => console.log(res))

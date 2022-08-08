@@ -5,7 +5,7 @@ import { useState } from "react"
 import messages from "../shared/AutoDismissAlert/messages"
 
 const NewPatient = (props) => {
-    console.log('these are the props in NewPatient', props)
+    // console.log('these are the props in NewPatient', props)
     const { msgAlert, user } = props
     const navigate = useNavigate()
     const [patient, setPatient] = useState({
@@ -19,7 +19,7 @@ const NewPatient = (props) => {
         comments: ''
     })
 
-    console.log('this is patient in CreatePatient', patient)
+    // console.log('this is patient in CreatePatient', patient)
 
     const handleChange = (e) => {
         setPatient(prevPatient => {
@@ -39,7 +39,7 @@ const NewPatient = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('info was submitted', patient)
+        // console.log('info was submitted', patient)
         createPatient(user, patient)
             .then(res => navigate(`/patients/${res.data.patient._id}`))
             .then(() => {
