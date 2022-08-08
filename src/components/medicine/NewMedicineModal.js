@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import MedicineForm from '../shared/MedicineForm'
-import { createToy } from '../../api/medicines'
+import { createMedicine } from '../../api/medicines'
 
 
 const NewMedicineModal = (props) => {
@@ -14,7 +14,7 @@ const NewMedicineModal = (props) => {
     console.log('medicine in edit modal', medicine)
 
     const handleChange = (e) => {
-        setToy(prevToy => {
+        setMedicine(prevMedicine => {
             let value = e.target.value
             const name = e.target.name
 
@@ -67,8 +67,8 @@ const NewMedicineModal = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton />
             <Modal.Body>
-                <ToyForm 
-                    toy={toy}
+                <MedicineForm 
+                    medicine={medicine}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     heading="Prescribe The Medicine To The Patient!"

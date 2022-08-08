@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Form, Container, Button } from 'react-bootstrap'
 
 const MedicineForm = (props) => {
@@ -16,19 +16,19 @@ const MedicineForm = (props) => {
                     value={ medicine.name }
                     onChange={ handleChange }
                 />
-                <Form.Label htmlFor="Dosage">Dosage</Form.Label>
+                <Form.Label htmlFor="dosage">Dosage</Form.Label>
                 <Form.Control
                     placeholder="Current Dosage"
-                    name="description"
-                    id="description"
+                    name="dosage"
+                    id="dosage"
                     value={ medicine.dosage }
                     onChange={ handleChange }
                 />
-                <Form.Label htmlFor="Duration">Duration</Form.Label>
+                <Form.Label htmlFor="duration">Duration</Form.Label>
                 <Form.Control
                     placeholder="Duration"
-                    name="dosage"
-                    id="dosage"
+                    name="duration"
+                    id="duration"
                     value={ medicine.dosage }
                     onChange={ handleChange }
                 />

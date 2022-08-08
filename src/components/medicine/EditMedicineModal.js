@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import MedicineForm from '../shared/MedicineForm'
-import { updateToy } from '../../api/medicines'
+import { updateMedicine } from '../../api/medicines'
 
 
 const EditMedicinesModal = (props) => {
@@ -45,7 +45,7 @@ const EditMedicinesModal = (props) => {
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
-                    message: 'Great! Here\s Your Updated Prescription!',
+                    message: 'Great! Here\'s Your Updated Prescription!',
                     variant: 'success'
                 })
             })
