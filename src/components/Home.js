@@ -1,4 +1,5 @@
 import PatientIndex from "./patients/PatientIndex"
+import doctorSmilePic from "../imgs/doctorsmile.jpeg"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -9,33 +10,39 @@ const Home = (props) => {
 	return (
 		
 		<div className="homeContainerMiddleBody">
-				<div className="body-home-page">
+			{/* <div className="image-doctor"> */}
+				{/* <img className="dr-picture img-fuild" src={doctorSmilePic}></img> */}
+			{/* </div> */}
 
-				
-						<h2 className="h2themedics">The Medics</h2>
+			<div className="hold-afterpicture">
 
-						<h3>See the Patients</h3>
-						{
-							user
-							?
-							<PatientIndex 
-								msgAlert= { msgAlert }
-								user={user}
-							/>
-							:
-							
-							<p>log in to see patients.</p>
-							
-							
-						}
+					<h2 className="h2themedics">The Medics</h2>
+
+					<h3>See the Patients</h3>
+					{
+						user
+						?
+						<PatientIndex 
+							msgAlert= { msgAlert }
+							user={user}
+						/>
+						:
+						<p>log in to see patients.</p>
+					}
+
+			</div>
+
+			{/* <footer className="footerHomeBody">
+					<h3>
+						ola.
+					</h3>
+			</footer> */}
 
 						<footer className="footerHomeBody">
 								
 						</footer>
 
-				</div>
-		</div>
-			
+				</div>			
 
 
 		
