@@ -89,59 +89,61 @@ const ShowPatient = (props) => {
     return (
         <>
             {/*Patient CARD  */}
-            <div className='backImg-cards'>
-                <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center', marginTop:10}}>
-                    <Card style={{width: '30%',  margin: 5}}>
-                    <div className='div-profile-IMG'>
-                        <img className='image' style={{maxWidth: '45%',margin: "5"}} src={imgProfile}/>
+            <Container>
+                <div className='row'>
+                    <div className='col-md-5' style={{textAlign: 'center', marginTop:10}}>
+                        <Card style={{margin: 5}}>
+                            <div className='div-profile-IMG'>
+                                <img className='image' style={{maxWidth: '45%',margin: "5"}} src={imgProfile}/>
+                            </div>
+                                
+                            <Card.Header><h2 >{ patient.name }</h2></Card.Header>
+                            <Card.Body>
+                                <p className='p-info'>Age:</p><p>{patient.age}</p>
+                                <p className='p-info'>Blood Type:</p><p>{patient.bloodType}</p>
+                                <p className='p-info'>Emergency Contact:</p><p>{patient.emergencyContact}</p>
+                                <p className='p-info'>Pre-existing Conditions:</p><p>{patient.preCon}</p>
+                                <p className='p-info'>Current Condition:</p><p>{patient.currCon}</p>
+                                <p className='p-info'>Doctors:</p><p>{doctorList}</p>
+                                
+                            </Card.Body>
+                            <Card.Footer>
+                                    <Button size='sm' className='mx-2' variant='info' onClick={() => setEditModalShow(true)}>
+                                        Edit Patient
+                                    </Button>
+                                    <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
+                                        Discharge Patient
+                                    </Button>
+                            </Card.Footer>
+                        </Card> 
                     </div>
-                        
-                    <Card.Header><h2 >{ patient.name }</h2></Card.Header>
-                    <Card.Body>
-                        <p className='p-info'>Age:</p><p>{patient.age}</p>
-                        <p className='p-info'>Blood Type:</p><p>{patient.bloodType}</p>
-                        <p className='p-info'>Emergency Contact:</p><p>{patient.emergencyContact}</p>
-                        <p className='p-info'>Pre-existing Conditions:</p><p>{patient.preCon}</p>
-                        <p className='p-info'>Current Condition:</p><p>{patient.currCon}</p>
-                        <p className='p-info'>Doctors:</p><p>{doctorList}</p>
-                        
-                    </Card.Body>
-                    <Card.Footer>
-                            <Button size='sm' className='mx-2' variant='info' onClick={() => setEditModalShow(true)}>
-                                Edit Patient
-                            </Button>
-                            <Button size='sm' className='mx-2' variant='outline-danger' onClick={() => setDeleteModalShow(true)}>
-                                Discharge Patient
-                            </Button>
-                    </Card.Footer>
-                </Card> 
-                
-            
-                    <Card className='cards-patient-treat treatment-card' >
-                        {/* <div  class="col" > */}
-                        <Card.Header><h4>Treatment</h4></Card.Header>
-                        <Card.Body>
-                            <p className='p-info'>Treatment:</p><p>{patient.treatment}</p>
-                            <p className='p-info'>Comments:</p><p>{patient.comments}</p>
-                            {medCards}
-                        </Card.Body>
-                        <Card.Footer>
-                            <Button size='sm' className='mx-2' variant='primary' onClick={() => setNewMedicinesModalShow(true)}>
-                                Prescribe
-                            </Button>
-                            <Button size='sm' className='mx-2' variant='info' onClick={() => {
-                                setEditModalShow(true)
-                                setTreatmentModalShow(true)
-                                }}>
-                                Set Treatment
-                            </Button>
-                            <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
-                                Attend patient
-                            </Button>
-                        </Card.Footer>
-                    </Card>
+                    <div className='col-md-7' style={{textAlign: 'center', marginTop:10}}>
+                        <Card className='cards-patient-treat treatment-card' style={{margin: 5}}>
+                            {/* <div  class="col" > */}
+                            <Card.Header><h4>Treatment</h4></Card.Header>
+                            <Card.Body>
+                                <p className='p-info'>Treatment:</p><p>{patient.treatment}</p>
+                                <p className='p-info'>Comments:</p><p>{patient.comments}</p>
+                                {medCards}
+                            </Card.Body>
+                            <Card.Footer>
+                                <Button size='sm' className='mx-2' variant='primary' onClick={() => setNewMedicinesModalShow(true)}>
+                                    Prescribe
+                                </Button>
+                                <Button size='sm' className='mx-2' variant='info' onClick={() => {
+                                    setEditModalShow(true)
+                                    setTreatmentModalShow(true)
+                                    }}>
+                                    Set Treatment
+                                </Button>
+                                <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
+                                    Attend patient
+                                </Button>
+                            </Card.Footer>
+                        </Card>
+                    </div>
                 </div>
-            </div>
+            </Container>
 
         {/* </div> */}
             <EditPatientModal
