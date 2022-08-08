@@ -127,7 +127,7 @@ const ShowPatient = (props) => {
                         </Card.Body>
                         <Card.Footer>
                             <Button size='sm' className='mx-2' variant='primary' onClick={() => setNewMedicinesModalShow(true)}>
-                                Prescribe Medication
+                                Prescribe
                             </Button>
                             <Button size='sm' className='mx-2' variant='info' onClick={() => {
                                 setEditModalShow(true)
