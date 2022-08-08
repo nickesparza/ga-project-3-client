@@ -30,32 +30,34 @@ const ShowMedicine = (props) => {
 
     return (
         <>
-            <Card>
+            <Card className='my-1'>
                 <Card.Header>{medicine.name}</Card.Header>
                 <Card.Body>
-                    <small>{medicine.dosage}</small>
+                    <h6>Dosage</h6>
+                    <p>{medicine.dosage}</p>
+                    <h6>Duration</h6>
+                    <div>{medicine.duration}</div>
                 </Card.Body>
                 <Card.Footer>
-                    <small>Condition: {medicine.duration}</small><br/>
                     {
-                        user && user._id === patient.owner._id
-                        ?
                         <>
-                            <Button 
+                            <Button
+                                size='sm'
+                                className='mx-2'
                                 variant="warning"
                                 onClick={() => setEditModalShow(true)}
                             >
                                 Edit Medicine
                             </Button>
-                            <Button 
+                            <Button
+                                size='sm'
+                                className='mx-2'
                                 onClick={() => destroyMedicine()} 
                                 variant="danger"
                             >
                                 Delete Medicine
                             </Button>
                         </>
-                        :
-                        null
                     }
                 </Card.Footer>
             </Card>

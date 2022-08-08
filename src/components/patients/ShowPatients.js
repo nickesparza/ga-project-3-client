@@ -8,6 +8,8 @@ import { Container, Card, Button } from 'react-bootstrap'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditPatientModal from './EditPatientModal'
 import DeletePatientModal from './DeletePatientModal'
+import ShowMedicine from '../medicine/ShowMedicine'
+import NewMedicineModal from '../medicine/NewMedicineModal'
 import { getOnePatient, attendPatient } from '../../api/patients'
 import { updatePatient } from '../../api/patients'
 
@@ -28,6 +30,7 @@ const ShowPatient = (props) => {
     const [editModalShow, setEditModalShow] = useState(false)
     const [deleteModalShow, setDeleteModalShow] = useState(false)
     const [treatmentModalShow, setTreatmentModalShow] = useState(false)
+    const [newMedicinesModalShow, setNewMedicinesModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
     const {user, msgAlert} = props
@@ -48,6 +51,23 @@ const ShowPatient = (props) => {
 
     if(!patient) {
         return <LoadingScreen  />
+    }
+
+    let medCards
+    if (patient) {
+        console.log('these are the medicines in patient', patient.medicines)
+        if (patient.medicines.length > 0) {
+            medCards = patient.medicines.map(medicine => (
+                <ShowMedicine
+                    key={medicine._id}
+                    medicine={medicine}
+                    user={user}
+                    patient={patient}
+                    msgAlert={msgAlert}
+                    triggerRefresh={() => setUpdated(prev => !prev)}
+                />
+            ))
+        }
     }
 
     const doctorList = patient.doctors.map(doctor => {
@@ -105,8 +125,12 @@ const ShowPatient = (props) => {
                             <Card.Body>
                                 <p className='p-info'>Treatment:</p><p>{patient.treatment}</p>
                                 <p className='p-info'>Comments:</p><p>{patient.comments}</p>
+                                {medCards}
                             </Card.Body>
                             <Card.Footer>
+                                <Button size='sm' className='mx-2' variant='primary' onClick={() => setNewMedicinesModalShow(true)}>
+                                    Prescribe Medication
+                                </Button>
                                 <Button size='sm' className='mx-2' variant='info' onClick={() => {
                                     setEditModalShow(true)
                                     setTreatmentModalShow(true)
@@ -159,6 +183,14 @@ const ShowPatient = (props) => {
                 show={deleteModalShow}
                 // send function to close manually
                 handleClose={() => setDeleteModalShow(false)}
+            />
+            <NewMedicineModal
+                patient={patient}
+                user={user}
+                msgAlert={msgAlert}
+                show={newMedicinesModalShow}
+                handleClose={() => setNewMedicinesModalShow(false)}
+                triggerRefresh={() => setUpdated(prev => !prev)}
             />
         </>
     )

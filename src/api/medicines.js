@@ -8,6 +8,9 @@ export const createMedicine = (user, patientId, newMedicine) => {
 	return axios({
 		url: `${apiUrl}/medication/${patientId}`,
 		method: 'POST',
+        headers: {
+			Authorization: `Token token=${user.token}`,
+		},
 		data: { medicine: newMedicine }
 	})
 }

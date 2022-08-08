@@ -29,7 +29,7 @@ const MedicineForm = (props) => {
                     placeholder="Duration"
                     name="duration"
                     id="duration"
-                    value={ medicine.dosage }
+                    value={ medicine.duration }
                     onChange={ handleChange }
                 />
                 <Button type="submit">Submit</Button>

@@ -40,7 +40,6 @@ const NewMedicineModal = (props) => {
     const handleSubmit = (e) => {
         // e equals the event
         e.preventDefault()
-
         createMedicine(user, patient._id, medicine)
             // if we're successful in the modal, we want the modal to close
             .then(() => handleClose())
