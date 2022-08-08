@@ -77,14 +77,14 @@ const ShowPatient = (props) => {
 
     const toggleDoctor = () => {
         attendPatient(user, patient)
-            .then(setUpdated(prev => !prev))
             .then(() => {
                 msgAlert({
                     heading: 'Success',
-                    message: 'Doctor added.',
+                    message: 'Attending status updated.',
                     variant: 'success'
                 })
             })
+            .then(setUpdated(prev => !prev))
             .catch(() => {
                 msgAlert({
                     heading: 'Error',
@@ -102,7 +102,7 @@ const ShowPatient = (props) => {
                     <div className='col-md-5' style={{textAlign: 'center', marginTop:10}}>
                         <Card style={{margin: 5}}>
                             <div className='div-profile-IMG'>
-                                <img className='image' style={{maxWidth: '45%',margin: "5"}} src={imgProfile}/>
+                                <img className='image' style={{maxWidth: '45%',margin: "5"}} src={imgProfile} alt="the patient's face"/>
                             </div>
                                 
                             <Card.Header><h2 >{ patient.name }</h2></Card.Header>
