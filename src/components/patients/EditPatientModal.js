@@ -28,6 +28,7 @@ const EditPatientModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         patient.doctors = props.patient.doctors
+        patient.medicines = props.patient.medicines
         updatePatient(user, patient)
             .then(() => handleClose())
             .then(() => {

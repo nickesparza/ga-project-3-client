@@ -145,7 +145,7 @@ const ShowPatient = (props) => {
                                     Set Treatment
                                 </Button>
                                 <Button size='sm' className='mx-2' variant='success' onClick={toggleDoctor}>
-                                    Attend patient
+                                    Set attending status
                                 </Button>
                             </Card.Footer>
                         </Card>
