@@ -45,6 +45,7 @@ code {
 
 /* Only contrl the back screen */
 .homeContainerMiddleBody{
+  /* overflow: scroll; */
 
 /* height: 800px; */
 /* position: fixed; */
@@ -53,7 +54,13 @@ code {
   text-align: center;
   position: relative;
 }
+
+.scroll-patient{
+  /* overflow: scroll; */
+}
+
 .hold-afterpicture{
+  overflow: scroll;
   height: 700px;
   /* min-height: 500px; */
 

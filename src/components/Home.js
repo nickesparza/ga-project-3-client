@@ -19,16 +19,21 @@ const Home = (props) => {
 					<h2 className="h2themedics">The Medics</h2>
 
 					<h3>See the Patients</h3>
+
+					
 					{
 						user
 						?
+
 						<PatientIndex 
 							msgAlert= { msgAlert }
 							user={user}
 						/>
+
 						:
 						<p>log in to see patients.</p>
 					}
+					
 
 			</div>
 
@@ -42,7 +47,7 @@ const Home = (props) => {
 								
 						</footer>
 
-				</div>			
+			</div>			
 
 
 		

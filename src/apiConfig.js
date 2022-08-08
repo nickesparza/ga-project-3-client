@@ -2,7 +2,7 @@ let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
 	production: 'https://themedicapp-api.herokuapp.com',
-	development: 'http://localhost:8000',
+	development: 'http://localhost:8200',
 }
 
 if (window.location.hostname === 'localhost') {
