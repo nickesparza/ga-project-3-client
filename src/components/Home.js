@@ -2,7 +2,7 @@ import PatientIndex from "./patients/PatientIndex"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
-	console.log('props in home', props)
+	// console.log('props in home', props)
 	const { msgAlert} = props
     const { user } = props
 
